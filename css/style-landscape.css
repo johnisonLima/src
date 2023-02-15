@@ -24,3 +24,7 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
 main section.cartelas .wrap_estatisticas > .primo_sorteado{
     max-width: 25vw;
 }
+/****************************** ENTERVALO SORTEADOS ******************************/
+main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
+    max-width: 20vw;
+}
