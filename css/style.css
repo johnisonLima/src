@@ -242,10 +242,3 @@ main section.cartelas .cartela_estatistica .qtd_sorteado{
     bottom: 1px;
     right: 5px;
 }
-
-
-@media screen and (max-width: 470px){
-    main section.cartelas .cartela_estatistica button{
-        width: calc(15% - 30px);
-    }   
-}
