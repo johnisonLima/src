@@ -46,13 +46,12 @@ body{
 /*****************************************************************************
 ************************************* READER *********************************
 ******************************************************************************/
-header {
+header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
     background-color: var(--paleta_padrao_cor01);
-    padding: 10px;
+    padding-block: 10px;
     box-shadow: 1px 1px 5px 1px #00000071;
 }
 
@@ -60,10 +59,7 @@ header {
 header > nav > ul.menu{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    /* width: 300px; */
-    width: auto;
-    margin: auto;
+    justify-content: space-evenly;
 }
 header > nav > ul.menu > li{    
     display: inline-block;
@@ -111,7 +107,7 @@ header .range_concursos{
     height: 8px;
     margin-top: 30px;
     margin-bottom: 10px;
-    margin-inline: 15px;    
+    margin-inline: 45px;    
     z-index: 0;
 }
 
@@ -181,13 +177,7 @@ main section.cartelas .cartela_estatistica{
     gap: 5px; 
     align-content: stretch;
     flex-wrap: wrap;
-    /* max-width: 600px; */
     min-width: 300px;   
-    
-
-
-    /* gap: 10px; */
-    /* min-width: 455px; */
 }
 main section.cartelas .cartela_estatistica button{
     color: var(--paleta_padrao_cor01);
@@ -200,25 +190,21 @@ main section.cartelas .cartela_estatistica button{
     padding-block: 3px 10px;
     padding-inline: 2px;
     text-align: center;
-    font-size: 15px;
+    font-size: clamp(16px, 2.5vw, 23px);
     width: calc(10% - 5px);
-    /* width: calc(14% - 38px);
-    padding-block: 15px;
-    font-size: 20px; */
 }
 main section.cartelas .cartela_estatistica .media_sorteado{
     display: none;
-    /* font-size: 10px;
+    font-size: 10px;
     position: absolute;
     top: 1px;
-    left: 5px; */
+    left: 5px;
 }
 main section.cartelas .cartela_estatistica .qtd_sorteado{    
-    font-size: 8px;
+    font-size: clamp(8px, 1.3vw, 11px);
     position: absolute;
-    bottom: 1px;
+    bottom: 2px;
     right: 5px;
-    /* font-size: 10px; */
 }
 main section.cartelas .cartela_estatistica button:nth-child(-n+6){
     background-color: var(--cor00);

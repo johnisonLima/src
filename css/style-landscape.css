@@ -1,16 +1,16 @@
-/*****************************************************************************
-************************** CARTELAS ESTATISTICA *******************************
-******************************************************************************/
-main section.cartelas .cartela_estatistica{
-    max-width: none;
-    /* min-width: none; */
-}
-
 header{
     background-color: red;
 }
 
-/*  
-    10 botoes 
-    9 espaços
-*/
+/*****************************************************************************
+************************** CARTELAS ESTATISTICA *******************************
+******************************************************************************/
+main section.cartelas .cartela_estatistica{    
+    gap: 8px;
+    width: 80vw;
+    margin: auto;
+}
+
+main section.cartelas .cartela_estatistica button{
+    width: calc(10% - 8px);
+}

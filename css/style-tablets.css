@@ -1,3 +1,10 @@
 header{
     background-color: green;
 }
+
+/*****************************************************************************
+************************** CARTELAS ESTATISTICA *******************************
+******************************************************************************/
+main section.cartelas .cartela_estatistica .media_sorteado{
+    display: block;
+}
