@@ -14,3 +14,8 @@ main section.cartelas .cartela_estatistica{
 main section.cartelas .cartela_estatistica button{
     width: calc(10% - 8px);
 }
+
+/******************************** SOMA SORTEADOS ********************************/
+main section.cartelas .wrap_estatisticas > .soma_sorteados{
+    max-width: 50vw;
+}
