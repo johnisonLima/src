@@ -93,7 +93,7 @@ $('#range_soma_sorteados').each(function(){
         animate: "slow",
         min:minValue,
         max:maxValue,
-        values: [0, 0],
+        values: [110, 200],
         create: function(event, ui){
             handleSorteios.text($(this).slider("values")[0]);
             handleApostas.text($(this).slider("values")[1]);
