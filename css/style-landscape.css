@@ -2,8 +2,10 @@
 ************************** CARTELAS ESTATISTICA *******************************
 ******************************************************************************/
 main section.cartelas .cartela_estatistica{
-    /* max-width: 300px; */
-    justify-content: center;
     max-width: none;
     min-width: none;
+}
+
+header{
+    background-color: red;
 }

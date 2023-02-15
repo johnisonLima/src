@@ -36,10 +36,16 @@ ul{
 a{
     text-decoration: none;
 }
+html{
+    width: 100vw;
+}
+body{
+    min-width: 310px;
+    overflow-x: hidden;
+}
 /*****************************************************************************
 ************************************* READER *********************************
 ******************************************************************************/
-
 header {
     display: flex;
     flex-direction: column;
@@ -55,13 +61,16 @@ header > nav > ul.menu{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 300px;
+    /* width: 300px; */
+    width: auto;
     margin: auto;
 }
 header > nav > ul.menu > li{    
     display: inline-block;
-    padding-block: 10px;    
-    padding-inline: 15px;
+    /* padding-block: 10px;    
+    padding-inline: 15px; */
+    padding-block: 25px;
+    padding-inline: 5px;
     border-radius: 2px;
     color: var(--paleta_padrao_cor05);
 }
@@ -168,24 +177,44 @@ main{
 main section.cartelas .cartela_estatistica{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    gap: 5px; 
     align-content: stretch;
-    /* justify-content: space-between; */
     flex-wrap: wrap;
-    gap: 10px;
     max-width: 600px;
-    min-width: 455px;
+    min-width: 300px;   
+    /* gap: 10px; */
+    /* min-width: 455px; */
 }
 main section.cartelas .cartela_estatistica button{
-    width: calc(14% - 38px);
     color: var(--paleta_padrao_cor01);
-    font-size: 20px;
     text-shadow: 1px 1px 1px #0000006c;
     border: none;
     outline: none;
     border-radius: 5px;
     filter: drop-shadow(0px 0px 2px #0000003f);
+    position: relative;width: 25px;
+    padding-block: 3px 10px;
+    padding-inline: 2px;
+    text-align: center;
+    font-size: 15px;
+    /* width: calc(14% - 38px);
     padding-block: 15px;
-    position: relative;
+    font-size: 20px; */
+}
+main section.cartelas .cartela_estatistica .media_sorteado{
+    display: none;
+    /* font-size: 10px;
+    position: absolute;
+    top: 1px;
+    left: 5px; */
+}
+main section.cartelas .cartela_estatistica .qtd_sorteado{    
+    font-size: 8px;
+    position: absolute;
+    bottom: 1px;
+    right: 5px;
+    /* font-size: 10px; */
 }
 main section.cartelas .cartela_estatistica button:nth-child(-n+6){
     background-color: var(--cor00);
@@ -229,16 +258,4 @@ main section.cartelas .cartela_estatistica button:nth-child(n+43):nth-child(-n+5
 }
 main section.cartelas .cartela_estatistica button:nth-child(n+54):nth-child(-n+60){
     background-color: var(--cor20Mais);
-}
-main section.cartelas .cartela_estatistica .media_sorteado{
-    font-size: 10px;
-    position: absolute;
-    top: 1px;
-    left: 5px;
-}
-main section.cartelas .cartela_estatistica .qtd_sorteado{
-    font-size: 10px;
-    position: absolute;
-    bottom: 1px;
-    right: 5px;
 }
