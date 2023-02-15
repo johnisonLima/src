@@ -148,7 +148,7 @@ header .range_concursos .ui-slider-handle .value::after {
     position: absolute;
     bottom: -10px;
     left: 50%;
-    border: solid transparent;
+    border: solid;
     height: 0;
     width: 0;
     border-color: rgba(194, 225, 245, 0);
