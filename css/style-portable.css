@@ -16,9 +16,9 @@ header > nav > ul.menu > li{
 ******************************************************************************/
 main section.cartelas .cartela_estatistica{
     /* max-width: 300px; */
+    justify-content: center;
     gap: 5px;
-    min-width: 300px;
-    margin: auto;
+    min-width: 300px;    
 }
 
 main section.cartelas .cartela_estatistica button {
