@@ -3,9 +3,14 @@
 ******************************************************************************/
 main section.cartelas .cartela_estatistica{
     max-width: none;
-    min-width: none;
+    /* min-width: none; */
 }
 
 header{
     background-color: red;
 }
+
+/*  
+    10 botoes 
+    9 espaços
+*/

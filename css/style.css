@@ -181,8 +181,11 @@ main section.cartelas .cartela_estatistica{
     gap: 5px; 
     align-content: stretch;
     flex-wrap: wrap;
-    max-width: 600px;
+    /* max-width: 600px; */
     min-width: 300px;   
+    
+
+
     /* gap: 10px; */
     /* min-width: 455px; */
 }
@@ -198,6 +201,7 @@ main section.cartelas .cartela_estatistica button{
     padding-inline: 2px;
     text-align: center;
     font-size: 15px;
+    width: calc(10% - 5px);
     /* width: calc(14% - 38px);
     padding-block: 15px;
     font-size: 20px; */
