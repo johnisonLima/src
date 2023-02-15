@@ -17,5 +17,10 @@ main section.cartelas .cartela_estatistica button{
 
 /******************************** SOMA SORTEADOS ********************************/
 main section.cartelas .wrap_estatisticas > .soma_sorteados{
-    max-width: 50vw;
+    max-width: 55vw;
+}
+
+/******************************** PRIMO SORTEADOS ********************************/
+main section.cartelas .wrap_estatisticas > .primo_sorteado{
+    max-width: 25vw;
 }
