@@ -249,3 +249,54 @@ main section.cartelas .cartela_estatistica button:nth-child(n+43):nth-child(-n+5
 main section.cartelas .cartela_estatistica button:nth-child(n+54):nth-child(-n+60){
     background-color: var(--cor20Mais);
 }
+
+/******************************** SOMA SORTEADOS ********************************/
+
+main section.cartelas .wrap_estatisticas > .soma_sorteados{
+    width: 400px;
+    height: 27px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.wrap_estatisticas > .soma_sorteados > .range_soma_sorteados{
+    /* background-image: linear-gradient(90deg, red, yellow, green, green, yellow, red); */
+    background-image: linear-gradient(90deg, 
+        var(--paleta_padrao_cor05), 
+        var(--paleta_padrao_cor02), 
+        var(--paleta_padrao_cor01), 
+        var(--paleta_padrao_cor01), 
+        var(--paleta_padrao_cor02), 
+        var(--paleta_padrao_cor05)
+    );
+    border: none;
+}
+.wrap_estatisticas > .soma_sorteados > .range_soma_sorteados > div{
+    font-size: 11px;
+    width: 23px;
+    height: 15x;
+    top: -2px;
+    text-align: center;
+    line-height: 15px;
+    background: none;
+    color: var(--paleta_monocromatica_cor01);
+    text-shadow: 1px 1px 2px #000;
+    transition: all .5s ease-in;
+}
+
+.wrap_estatisticas > .soma_sorteados > .rules_soma{
+    position: absolute;
+    /* left: 120px; */
+    top: 20px;
+    bottom: 0;
+    width: 100%;
+}
+.wrap_estatisticas > .soma_sorteados > .rules_soma::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(90deg, var(--paleta_padrao_cor01) 1px, transparent 2px);
+    background-size: 11.07% 100%;
+}

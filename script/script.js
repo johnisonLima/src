@@ -4,7 +4,7 @@ let link_menu = document.querySelector('header > nav .home')
 link_menu.setAttribute('href', base_url)
 
 // ***********************************************************************************
-// ********************************* TESTE RANGE *************************************
+// *************************** TESTE RANGE CONCURSOS *********************************
 // ***********************************************************************************
 let minValue = 2051
 let maxValue = 2561
@@ -80,3 +80,27 @@ function zeroEsuerda(numero){
     }
     return numero
 }
+// ***********************************************************************************
+// *************************** TESTE RANGE SOMA *********************************
+// ***********************************************************************************
+$('#range_soma_sorteados').each(function(){		
+    let handleSorteios 	= $("#handle_soma_sorteio"),
+        handleApostas 	= $("#handle_soma_aposta"),
+        minValue 		= 27,
+        maxValue 		= 345;
+
+    $(this).slider({
+        animate: "slow",
+        min:minValue,
+        max:maxValue,
+        values: [0, 0],
+        create: function(event, ui){
+            handleSorteios.text($(this).slider("values")[0]);
+            handleApostas.text($(this).slider("values")[1]);
+          },
+          change: function(event, ui){
+            handleSorteios.text(ui.values[0]);
+            handleApostas.text(ui.values[1]);	
+          }
+    });
+});	
