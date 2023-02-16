@@ -7,8 +7,8 @@ header{
 ******************************************************************************/
 main section.cartelas .cartela_estatistica{    
     gap: 8px;
-    width: 80vw;
-    margin: auto;
+    /* width: 80vw;
+    margin: auto; */
 }
 
 main section.cartelas .cartela_estatistica button{
@@ -17,22 +17,22 @@ main section.cartelas .cartela_estatistica button{
 
 /******************************** SOMA SORTEADOS ********************************/
 main section.cartelas .wrap_estatisticas > .soma_sorteados{
-    max-width: 55vw;
+    max-width: 55%;
 }
 
 /******************************** PRIMO SORTEADOS ********************************/
 main section.cartelas .wrap_estatisticas > .primo_sorteado{
-    max-width: 25vw;
+    max-width: 40%;    
 }
-/****************************** ENTERVALO SORTEADOS ******************************/
+/****************************** INTERVALO SORTEADOS ******************************/
 main section.cartelas .wrap_estatisticas > .intervalo_sorteado{    
     height: 15px;
-    max-width: 20vw;
+    max-width: 25%;
 }
 .wrap_estatisticas > .intervalo_sorteado > .progress_bar{    
     font-size: 12px;
 }
 /****************************** CONTROL APOSTADOS    ******************************/
 main section.cartelas .cartela_estatistica .control_navegacao{
-    width: 5vw;
+    /* width: 7%; */
 }

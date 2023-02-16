@@ -454,7 +454,7 @@ main section.cartelas .cartela_estatistica .control_navegacao{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 10vw;
+    width: 7%;
     height: 100%;
     color: var(--paleta_monocromatica_cor01);
     text-shadow: 1px 0px 2px #000000b0;    
