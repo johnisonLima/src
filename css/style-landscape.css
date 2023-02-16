@@ -1,7 +1,9 @@
 header{
     background-color: red;
 }
-
+main section.cartelas > .wrap_estatisticas{
+    max-width: 80vw;
+}
 /*****************************************************************************
 ************************** CARTELAS ESTATISTICA *******************************
 ******************************************************************************/
@@ -22,7 +24,7 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
 
 /******************************** PRIMO SORTEADOS ********************************/
 main section.cartelas .wrap_estatisticas > .primo_sorteado{
-    max-width: 40%;    
+    max-width: 250px;    
 }
 /****************************** INTERVALO SORTEADOS ******************************/
 main section.cartelas .wrap_estatisticas > .intervalo_sorteado{    
@@ -33,6 +35,3 @@ main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
     font-size: 12px;
 }
 /****************************** CONTROL APOSTADOS    ******************************/
-main section.cartelas .cartela_estatistica .control_navegacao{
-    /* width: 7%; */
-}
