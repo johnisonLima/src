@@ -262,7 +262,7 @@ main section.cartelas .cartela_estatistica button:nth-child(n+41):nth-child(-n+4
 main section.cartelas .cartela_estatistica button:nth-child(n+43):nth-child(-n+53){
     background-color: var(--cor10e20);
 }
-main section.cartelas .cartela_estatistica button:nth-child(n+54):nth-child(-n+60){
+main section.cartelas .cartela_estatistica button:nth-child(n+54):nth-child(-n+62){
     background-color: var(--cor20Mais);
 }
 
