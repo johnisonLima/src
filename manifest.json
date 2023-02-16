@@ -1,0 +1,42 @@
+{
+    "name": "App",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "/img/icon/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image\/png"
+        },
+        {
+            "src": "/img/icon/favicon.ico",
+            "type": "image/x-icon",
+            "purpose": "maskable"
+        },
+        {
+            "src": "\/img/icon/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image\/png"
+        },
+        {
+            "src": "\/img/icon/apple-icon-57x57.png",
+            "sizes": "57x57",
+            "type": "image\/png"
+        },
+        {
+            "src": "\/img/icon/apple-icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image\/png"
+        },
+        {
+            "src": "\/img/icon/apple-icon-114x114.png",
+            "sizes": "144x144",
+            "type": "image\/png"
+        },
+        {
+            "src": "\/img/icon/android-icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image\/png"
+        }        
+    ]
+}
