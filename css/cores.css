@@ -1,0 +1,31 @@
+:root {
+    --paleta_padrao_cor01: #F2E3D5;
+    --paleta_padrao_cor02: #04BFBF;
+    --paleta_padrao_cor03: #04ADBF;
+    --paleta_padrao_cor04: #7EA629;
+    --paleta_padrao_cor05: #027373;
+
+    --paleta_padrao_cor04_: #7ea629af;
+
+    --paleta_monocromatica_cor01: #F2F2F2;
+    --paleta_monocromatica_cor02: #A6A6A6;
+    --paleta_monocromatica_cor03: #595959;
+    --paleta_monocromatica_cor04: #262626;
+    --paleta_monocromatica_cor05: #0D0D0D;
+
+    --cor20Mais: #115959;
+    --cor10e20: #0B508C;
+    --cor09: #2474A6;
+    --cor08: #8C3E62;    
+    --cor07: #c95f5f;
+    --cor06: #F2BC8D;
+    --cor05: #D9C9BA;
+    --cor04: #2EF2BB;
+    --cor03: #30F2CF;
+    --cor02: #C8C5D9;
+    --cor01: #BACDD9;
+    --cor00: #f0d6c7;
+
+    --cor_landscape: red;
+}
+

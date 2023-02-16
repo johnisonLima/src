@@ -1,5 +1,5 @@
 header{
-    background-color: red;
+    background-color: var(--cor_landscape);
 }
 main section.cartelas > .wrap_estatisticas{
     max-width: 80vw;
