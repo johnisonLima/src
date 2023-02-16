@@ -162,15 +162,29 @@ header .range_concursos .ui-slider-handle .value::after {
     border-width: 5px;
     margin-left: -5px;
 }
-
 /*****************************************************************************
-************************** CARTELAS ESTATISTICA *******************************
+******************************* MAIN *****************************************
 ******************************************************************************/
 main{
     max-width: 95vw;
     margin: auto;
     margin-top: 30px;
 }
+/*****************************************************************************
+**************************** WRAP ESTATISTICAS *******************************
+******************************************************************************/
+main section.cartelas > .wrap_estatisticas{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    max-width: 80vw;
+    margin: auto;
+
+}
+/*****************************************************************************
+************************** CARTELAS ESTATISTICA *******************************
+******************************************************************************/
+
 main section.cartelas .cartela_estatistica{
     display: flex;
     flex-direction: row;
@@ -254,9 +268,10 @@ main section.cartelas .cartela_estatistica button:nth-child(n+54):nth-child(-n+6
 
 /******************************** SOMA SORTEADOS ********************************/
 main section.cartelas .wrap_estatisticas > .soma_sorteados{
-    max-width: 70vw;
+    align-self: center;
+    width: 70%;
+    min-width: 170px;
     height: 27px;
-    margin: auto;
     margin-bottom: 15px;
     position: relative;
 }
@@ -306,13 +321,45 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
     background-image: linear-gradient(90deg, var(--paleta_padrao_cor01) 1px, transparent 2px);
     background-size: 11% 100%;
 }
+/****************************** CONTROL SORTEADOS ******************************/
+main section.cartelas .wrap_estatisticas > .control_sorteado{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+}
+
+.wrap_estatisticas > .control_sorteado .switch{
+    display: inline;
+    width: 35px;    
+    height: 15px;
+    position: relative;
+}
+
+.wrap_estatisticas > .control_sorteado .switch input{
+    display: none;
+}
+
+.wrap_estatisticas > .control_sorteado .switch .slider{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 30px;
+    box-shadow: 0 0 0 2px var(--paleta_padrao_cor02), 0 0 4px var(--paleta_padrao_cor02);
+    cursor: pointer;
+    border: 2px solid transparent;
+    overflow: hidden;
+    transition: .4s;
+}
 /******************************** PRIMO SORTEADOS ********************************/
 main section.cartelas .wrap_estatisticas > .primo_sorteado{
+    align-self: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 45vw;
-    margin: auto;
+    width: 45%;
+    min-width: 150px;
     margin-bottom: 15px;
 }
 
@@ -366,13 +413,14 @@ main section.cartelas .wrap_estatisticas > .primo_sorteado{
 }
 /****************************** INTERVALO SORTEADOS ******************************/
 main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
+    align-self: center;
     display: flex;
-    max-width: 30vw;
+    width: 35%;
+    min-width: 120px;
     height: 12px;
     background-color: var(--paleta_monocromatica_cor01);
-    margin: auto;
-    margin-bottom: 30px;
     border-radius: 5px;
+    margin-bottom: 30px;
     box-shadow: 0px 8px 6px -4px #00000080;
 }
 
@@ -388,39 +436,7 @@ main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
     border-radius: 0 10px 10px 0;    
     text-shadow: 1px 1px 1px #00000063;
 }
-/****************************** CONTROL SORTEADOS ******************************/
-main section.cartelas .wrap_estatisticas > .control_sorteado{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
 
-.wrap_estatisticas > .control_sorteado .switch{
-    display: inline;
-    width: 35px;    
-    height: 15px;
-    position: relative;
-    /* transform: translateY(50%); */
-    /* top: 2px; */
-}
-
-.wrap_estatisticas > .control_sorteado .switch input{
-    display: none;
-}
-
-.wrap_estatisticas > .control_sorteado .switch .slider{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 30px;
-    box-shadow: 0 0 0 2px var(--paleta_padrao_cor02), 0 0 4px var(--paleta_padrao_cor02);
-    cursor: pointer;
-    border: 2px solid transparent;
-    overflow: hidden;
-    transition: .4s;
-}
 
 .wrap_estatisticas > .control_sorteado .switch .slider::before{
     position: absolute;
@@ -448,7 +464,7 @@ main section.cartelas .cartela_estatistica .control_navegacao{
 }
 
 .cartela_estatistica .prev{
-    background-image: linear-gradient(90deg, #F2F2F2E8 5px, #04BFBF80, #04BFBF6B);
+    background-image: linear-gradient(90deg, #F2F2F2E8 5px, #04BFBF80, #04bfbf2d);
     left: 0;    
     opacity: 0;
     transition: .5s;
@@ -457,7 +473,7 @@ main section.cartelas .cartela_estatistica .control_navegacao{
     opacity: 1;
 }
 .cartela_estatistica .next{
-    background-image: linear-gradient(270deg, #F2F2F2E8 5px, #04BFBF80, #04BFBF6B);
+    background-image: linear-gradient(270deg, #F2F2F2E8 5px, #04BFBF80, #04bfbf2d);
     right: 0;    
     opacity: 0;
     transition: .5s;
