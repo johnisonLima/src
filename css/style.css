@@ -1,4 +1,6 @@
 @import url('../css/cores.css');
+@import url('../css/fontes.css');
+
 *{
     margin: 0;
     padding: 0;
@@ -36,12 +38,12 @@ header > nav > ul.menu{
 }
 header > nav > ul.menu > li{    
     display: inline-block;
+    color: var(--paleta_padrao_cor05);
     /* padding-block: 10px;    
     padding-inline: 15px; */
     padding-block: 25px;
     padding-inline: 5px;
     border-radius: 2px;
-    color: var(--paleta_padrao_cor05);
 }
 header > nav > ul.menu > li:hover{
     background-color: var(--paleta_padrao_cor04);
@@ -90,7 +92,7 @@ header .range_concursos .ui-widget-header{
 
 header .range_concursos .ui-slider-handle{
     width: 23px;
-    height: 23px;
+    height: 23px;    
     background: var(--paleta_padrao_cor03);
     border: 6px solid var(--paleta_padrao_cor01);
     border-radius: 50%;
@@ -109,15 +111,15 @@ header .range_concursos .ui-slider-handle:focus {
 header .range_concursos .ui-slider-handle .value {
     display: block;
     position: absolute;
-    padding: 7px;
     background-color: var(--paleta_padrao_cor03);
+    color: var(--paleta_monocromatica_cor01);
+    font-size: 11px;    
+    text-shadow: 1px 1px 2px #00000050;
     border-radius: 5px;
+    padding: 7px;
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    color: var(--paleta_monocromatica_cor01);
-    font-size: 11px;
-    text-shadow: 1px 1px 2px #00000050;
     filter: drop-shadow(0px 2px 4px #0000009d);
 }
 
@@ -194,6 +196,9 @@ main section.cartelas .cartela_estatistica .qtd_sorteado{
     bottom: 2px;
     right: 5px;
 }
+main section.cartelas .cartela_estatistica button{
+    font-family: Avant, Helvetica, sans-serif;
+}
 main section.cartelas .cartela_estatistica button:nth-child(-n+6){
     background-color: var(--cor00);
     color: var(--paleta_monocromatica_cor02);
@@ -261,8 +266,10 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
 .wrap_estatisticas > .soma_sorteados > .range_soma_sorteados > div{
     width: 25px;
     height: 23px;
-    font-size: 11px;
+    font-size: 9px;
+    letter-spacing: 2px;
     text-align: center;
+    font-family: Avant, Helvetica, sans-serif;
     color: var(--paleta_padrao_cor01);    
     background: none;
     background-color: var(--paleta_padrao_cor04_);    
@@ -459,7 +466,11 @@ main section.cartelas .cartela_estatistica .control_navegacao{
 
 
 
-
+.teste_fontes{
+    margin: 90px;
+    font-size: 30px;    
+    font-family: Lato, Helvetica, sans-serif;
+}
 
 
 
