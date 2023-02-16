@@ -25,6 +25,10 @@ main section.cartelas .wrap_estatisticas > .primo_sorteado{
     max-width: 25vw;
 }
 /****************************** ENTERVALO SORTEADOS ******************************/
-main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
+main section.cartelas .wrap_estatisticas > .intervalo_sorteado{    
+    height: 15px;
     max-width: 20vw;
+}
+.wrap_estatisticas > .intervalo_sorteado > .progress_bar{    
+    font-size: 12px;
 }

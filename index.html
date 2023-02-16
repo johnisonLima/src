@@ -9,11 +9,6 @@
     <meta name="msapplication-TileColor" content="#A6A6A6">
     <meta name="msapplication-TileImage" content="img/icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#A6A6A6">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/ui-lightness/jquery-ui.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-landscape.css" media="screen and (min-width: 768.98px)">
-    <link rel="stylesheet" href="css/style-tablets.css" media="screen and (min-width: 991.98px)">
-    <link rel="stylesheet" href="css/style-desktop.css" media="screen and (min-width: 1199.98px)">
     <link rel="shortcut icon" href="img/icon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
@@ -21,6 +16,12 @@
     <link rel="apple-touch-icon" sizes="57x57" href="img/icon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/icon/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/icon/apple-icon-114x114.png">    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/ui-lightness/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-landscape.css" media="screen and (min-width: 768.98px)">
+    <link rel="stylesheet" href="css/style-tablets.css" media="screen and (min-width: 991.98px)">
+    <link rel="stylesheet" href="css/style-desktop.css" media="screen and (min-width: 1199.98px)">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
     <title>Loteria</title>
 </head>
 <body>
@@ -60,6 +61,12 @@
                         <div id="handle_soma_sorteio" class="ui-slider-handle"></div>
                     </div>
                     <div class="rules_soma"></div>
+                </div>             
+                <div class="control_sorteado">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
                 </div>
                 <div class="primo_sorteado">
                     <span class="qtd_primo">6</span>
@@ -72,8 +79,19 @@
                 </div>
                 <div class="intervalo_sorteado">
                     <div class="progress_bar">75%</div>
-                </div>
-                <div class="cartela_estatistica"></div>                
+                </div>   
+                <div class="cartela_estatistica">
+                    <div class="control_navegacao prev">
+                        <span class="material-symbols-outlined">
+                            arrow_back_ios_new
+                        </span>
+                    </div>
+                    <div class="control_navegacao next">
+                        <span class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span>
+                    </div>
+                </div>                
             </div>            
         </section>
     </main>

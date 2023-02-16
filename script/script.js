@@ -47,7 +47,7 @@ $('#range_concursos').each(function(){
 // ***********************************************************************************
 let cartela_estatistica = document.querySelector('.cartela_estatistica')
 
-cartela_estatistica.innerHTML = cartela()
+cartela_estatistica.innerHTML += cartela()
 
 cartela_estatistica = document.querySelector('.cartela_estatistica')
 
