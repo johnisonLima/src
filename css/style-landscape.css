@@ -41,6 +41,8 @@ main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
 main section.cartelas .wrap_volante{
     max-width: 65vw;
 }
+
+/**********************************  VOLANTE ********************************/
 .wrap_volante .volante_body .cartela_aposta{
     gap: 12px;
     justify-content: space-between;
@@ -48,5 +50,6 @@ main section.cartelas .wrap_volante{
 
 .wrap_volante .volante_body .cartela_aposta button{
     width: calc(10% - 12px);
+    color: var(--paleta_padrao_cor01);
     padding-block: 9px;
 }
