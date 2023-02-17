@@ -44,4 +44,5 @@ main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
 
 .wrap_volante .volante_body .cartela_aposta button{
     width: calc(10% - 12px);
+    padding-block: 9px;
 }
