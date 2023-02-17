@@ -493,6 +493,7 @@ main section.cartelas > .wrap_volante{
     flex-direction: column;   
     max-width: 80vw;
     margin: auto;
+    margin-bottom: 50px;
 } 
 
 /******************************  VOLANTE HEADER ******************************/
@@ -747,11 +748,47 @@ main section.cartelas > .wrap_volante{
     background-color: var(--paleta_padrao_cor01_darken);
 }
 
+/*****************************************************************************
+********************************* WRAP PRIMOS *******************************
+******************************************************************************/
+main section.cartelas > .wrap_primo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 
+.wrap_primo table{
+    border-collapse: collapse;
+}
 
+.wrap_primo table caption{
+    background-color: var(--paleta_padrao_cor03);
+    color: var(--paleta_monocromatica_cor01);
+    text-shadow: 1px 1px 1px #00000046;
+    padding: 5px;
+}
 
+.wrap_primo table td,
+.wrap_primo table th{
+    border: 1px solid var(--paleta_monocromatica_cor02);
+    padding: 2px 3px;
+}
 
-
+.wrap_primo table th{
+    background-color: var(--paleta_padrao_cor01);
+    color: var(--paleta_monocromatica_cor03);
+}
+.wrap_primo table td{
+    background-color: var(--paleta_padrao_cor01_ligthten);
+    color: var(--paleta_monocromatica_cor03);
+}
+.wrap_primo table th:first-child{
+    background-color: var(--paleta_padrao_cor01_darken);
+}
+main section.cartelas > .teste_fontes{
+    padding-block: 100px;
+}
 
 
 
