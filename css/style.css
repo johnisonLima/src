@@ -522,7 +522,7 @@ main section.cartelas > .wrap_volante{
     padding-inline: 5px;
     border: none;
     outline: none;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px solid var(--paleta_padrao_cor01);
     cursor: pointer;
 }
