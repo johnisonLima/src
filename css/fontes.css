@@ -21,7 +21,13 @@
     src: url('../fonts/lato/Lato-Reg.ttf') format(truetype);
 }
 
+@font-face {
+    font-family: 'Lobster';
+    src: url('../fonts/lobster/Lobster\ 1.4.otf') format(opentype);
+}
+
 :root{
     --fonte_padrao: Lato, Helvetica, sans-serif;
     --fonte_secundaria: Avant, Helvetica, sans-serif;
+    --fonte_destaque: Lobster, 'Times New Roman', Times, serif
 }

@@ -504,21 +504,24 @@ main section.cartelas > .wrap_volante{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 5px;
+    gap: 12px;
     flex-wrap: wrap;
     min-width: 280px;
 }
 
 .wrap_volante .volante_body .cartela_aposta button{
-    width: calc(10% - 5px);
-    font-size: clamp(15px, 2.1vw, 20px);
+    width: calc(10% - 12px);
+    font-family: var(--fonte_destaque);
+    font-size: clamp(9px, 2.5vw, 20px);
     text-align: center;
-    vertical-align: middle;
-    padding-block: 4px;
-    padding-inline: 4px;
+    color: var(--paleta_monocromatica_cor01);
+    text-shadow: 1px 1px 1px #0000008f;
+    background-color: var(--paleta_padrao_cor03);
+    padding-block: 9px;
+    padding-inline: 5px;
     border: none;
     outline: none;
-    border-radius: 5px;    
+    border-radius: 10px;    
 }
 
 
