@@ -17,9 +17,10 @@ html{
 }
 body{
     overflow-x: hidden;
+    font-family: var(--fonte_padrao);
 }
 /*****************************************************************************
-************************************* READER *********************************
+****************************** READER ****************************************
 ******************************************************************************/
 header{
     display: flex;
@@ -37,13 +38,13 @@ header > nav > ul.menu{
     justify-content: space-evenly;
 }
 header > nav > ul.menu > li{    
-    display: inline-block;
+    /* display: inline-block; */
+    font-size: 15px;
     color: var(--paleta_padrao_cor05);
-    /* padding-block: 10px;    
-    padding-inline: 15px; */
-    padding-block: 25px;
-    padding-inline: 5px;
     border-radius: 2px;
+    padding-block: 10px;
+    padding-inline: 5px;
+    margin-bottom: 15px;
 }
 header > nav > ul.menu > li:hover{
     background-color: var(--paleta_padrao_cor04);
@@ -114,6 +115,7 @@ header .range_concursos .ui-slider-handle .value {
     background-color: var(--paleta_padrao_cor03);
     color: var(--paleta_monocromatica_cor01);
     font-size: 11px;    
+    font-weight: lighter;
     text-shadow: 1px 1px 2px #00000050;
     border-radius: 5px;
     padding: 7px;
@@ -136,6 +138,7 @@ header .range_concursos .ui-slider-handle .value::after {
     border-width: 5px;
     margin-left: -5px;
 }
+
 /*****************************************************************************
 ******************************* MAIN *****************************************
 ******************************************************************************/
@@ -144,106 +147,19 @@ main{
     margin: auto;
     margin-top: 30px;
 }
+
 /*****************************************************************************
 **************************** WRAP ESTATISTICAS *******************************
 ******************************************************************************/
 main section.cartelas > .wrap_estatisticas{
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     max-width: 95vw;
     margin: auto;
 
 }
-/*****************************************************************************
-************************** CARTELAS ESTATISTICA *******************************
-******************************************************************************/
 
-main section.cartelas .cartela_estatistica{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 5px; 
-    align-content: stretch;
-    flex-wrap: wrap;
-    min-width: 300px;   
-    position: relative;
-}
-main section.cartelas .cartela_estatistica button{
-    color: var(--paleta_padrao_cor01);
-    text-shadow: 1px 1px 1px #0000006c;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    filter: drop-shadow(0px 0px 2px #0000003f);
-    position: relative;width: 25px;
-    padding-block: 3px 10px;
-    padding-inline: 2px;
-    text-align: center;
-    font-size: clamp(16px, 2.5vw, 23px);
-    width: calc(10% - 5px);
-}
-main section.cartelas .cartela_estatistica .media_sorteado{
-    display: none;
-    font-size: 10px;
-    position: absolute;
-    top: 1px;
-    left: 5px;
-}
-main section.cartelas .cartela_estatistica .qtd_sorteado{    
-    font-size: clamp(8px, 1.3vw, 11px);
-    position: absolute;
-    bottom: 2px;
-    right: 5px;
-}
-main section.cartelas .cartela_estatistica button{
-    font-family: Avant, Helvetica, sans-serif;
-}
-main section.cartelas .cartela_estatistica button:nth-child(-n+6){
-    background-color: var(--cor00);
-    color: var(--paleta_monocromatica_cor02);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+7):nth-child(-n+12){
-    background-color: var(--cor01);
-    color: var(--paleta_monocromatica_cor02);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+13):nth-child(-n+16){
-    background-color: var(--cor02);
-    color: var(--paleta_monocromatica_cor02);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+17):nth-child(-n+21){
-    background-color: var(--cor03);
-    color: var(--paleta_monocromatica_cor02);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+22):nth-child(-n+26){
-    background-color: var(--cor04);
-    color: var(--paleta_monocromatica_cor02);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+27):nth-child(-n+28){
-    background-color: var(--cor05);    
-    color: var(--paleta_monocromatica_cor02);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+29):nth-child(-n+32){
-    background-color: var(--cor06);
-    color: var(--paleta_monocromatica_cor02);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+33):nth-child(-n+36){
-    background-color: var(--cor07);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+37):nth-child(-n+40){
-    background-color: var(--cor08);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+41):nth-child(-n+42){
-    background-color: var(--cor09);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+43):nth-child(-n+53){
-    background-color: var(--cor10e20);
-}
-main section.cartelas .cartela_estatistica button:nth-child(n+54):nth-child(-n+62){
-    background-color: var(--cor20Mais);
-}
-
-/******************************** SOMA SORTEADOS ********************************/
+/**************************** SOMA SORTEADOS ********************************/
 main section.cartelas .wrap_estatisticas > .soma_sorteados{
     align-self: center;
     width: 70%;
@@ -252,6 +168,7 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
     margin-bottom: 15px;
     position: relative;
 }
+
 .wrap_estatisticas > .soma_sorteados > .range_soma_sorteados{
     background-image: linear-gradient(90deg, 
         var(--paleta_padrao_cor05), 
@@ -263,13 +180,14 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
     );
     border: none;
 }
+
 .wrap_estatisticas > .soma_sorteados > .range_soma_sorteados > div{
     width: 25px;
     height: 23px;
     font-size: 9px;
     letter-spacing: 2px;
     text-align: center;
-    font-family: Avant, Helvetica, sans-serif;
+    font-family: var(--fonte_secundaria);
     color: var(--paleta_padrao_cor01);    
     background: none;
     background-color: var(--paleta_padrao_cor04_);    
@@ -290,6 +208,7 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
     bottom: 0;
     width: 100%;
 }
+
 .wrap_estatisticas > .soma_sorteados > .rules_soma::before{
     content: '';
     position: absolute;
@@ -300,6 +219,7 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
     background-image: linear-gradient(90deg, var(--paleta_padrao_cor01) 1px, transparent 2px);
     background-size: 11% 100%;
 }
+
 /****************************** CONTROL SORTEADOS ******************************/
 main section.cartelas .wrap_estatisticas > .control_sorteado{
     align-self: flex-end;
@@ -331,6 +251,7 @@ main section.cartelas .wrap_estatisticas > .control_sorteado{
     overflow: hidden;
     transition: .4s;
 }
+
 /******************************** PRIMO SORTEADOS ********************************/
 main section.cartelas .wrap_estatisticas > .primo_sorteado{
     align-self: center;
@@ -360,37 +281,44 @@ main section.cartelas .wrap_estatisticas > .primo_sorteado{
 .wrap_estatisticas > .primo_sorteado > .qtd_primo.select{
     background-image: url('../img/esfera-2.png');
 }
+
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:first-child{
     width: 12px;
     height: 12px;
     font-size: 8px;
 }
+
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(2){
     width: 15px;
     height: 15px;
     font-size: 10px;
 }
+
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(3){
     width: 18px;
     height: 18px;
     font-size: 12px;
 }
+
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(4){
     width: 21px;
     height: 21px;
     font-size: 12px;
 }
+
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(5){
     width: 23px;
     height: 23px;
     font-size: 14px;
 }
+
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(6){
     width: 26px;
     height: 26px;
     font-size: 17px;
 }
-/****************************** INTERVALO SORTEADOS ******************************/
+
+/************************ INTERVALO SORTEADOS *****************************/
 main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
     align-self: center;
     display: flex;
@@ -416,7 +344,6 @@ main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
     text-shadow: 1px 1px 1px #00000063;
 }
 
-
 .wrap_estatisticas > .control_sorteado .switch .slider::before{
     position: absolute;
     content: '';
@@ -427,6 +354,101 @@ main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
     transform: translateX(-20px);
     transition: .4s;
 }
+
+/************************* CARTELAS ESTATISTICA ******************************/
+main section.cartelas .wrap_estatisticas .cartela_estatistica{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px; 
+    align-content: stretch;
+    flex-wrap: wrap;
+    min-width: 300px;   
+    position: relative;
+}
+
+.wrap_estatisticas .cartela_estatistica button{
+    color: var(--paleta_padrao_cor01);
+    text-shadow: 1px 1px 1px #0000006c;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    filter: drop-shadow(0px 0px 2px #0000003f);
+    position: relative;width: 25px;
+    padding-block: 3px 10px;
+    padding-inline: 2px;
+    text-align: center;
+    font-size: clamp(16px, 2.5vw, 23px);
+    width: calc(10% - 5px);
+}
+
+.wrap_estatisticas .cartela_estatistica .media_sorteado{
+    display: none;
+    font-size: 10px;
+    position: absolute;
+    top: 1px;
+    left: 5px;
+}
+
+.wrap_estatisticas .cartela_estatistica .qtd_sorteado{    
+    font-size: clamp(8px, 1.3vw, 11px);
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+}
+
+.wrap_estatisticas .cartela_estatistica button{
+    font-family: var(--fonte_secundaria);
+}
+
+.wrap_estatisticas .cartela_estatistica button > div{
+    font-family: var(--fonte_padrao);
+}
+
+.wrap_estatisticas .cartela_estatistica button:nth-child(-n+6){
+    background-color: var(--cor00);
+    color: var(--paleta_monocromatica_cor02);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+7):nth-child(-n+12){
+    background-color: var(--cor01);
+    color: var(--paleta_monocromatica_cor02);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+13):nth-child(-n+16){
+    background-color: var(--cor02);
+    color: var(--paleta_monocromatica_cor02);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+17):nth-child(-n+21){
+    background-color: var(--cor03);
+    color: var(--paleta_monocromatica_cor02);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+22):nth-child(-n+26){
+    background-color: var(--cor04);
+    color: var(--paleta_monocromatica_cor02);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+27):nth-child(-n+28){
+    background-color: var(--cor05);    
+    color: var(--paleta_monocromatica_cor02);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+29):nth-child(-n+32){
+    background-color: var(--cor06);
+    color: var(--paleta_monocromatica_cor02);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+33):nth-child(-n+36){
+    background-color: var(--cor07);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+37):nth-child(-n+40){
+    background-color: var(--cor08);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+41):nth-child(-n+42){
+    background-color: var(--cor09);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+43):nth-child(-n+53){
+    background-color: var(--cor10e20);
+}
+.wrap_estatisticas .cartela_estatistica button:nth-child(n+54):nth-child(-n+62){
+    background-color: var(--cor20Mais);
+}
+
 /****************************** CONTROL APOSTADOS    ******************************/
 main section.cartelas .cartela_estatistica .control_navegacao{
     display: flex;
@@ -460,7 +482,6 @@ main section.cartelas .cartela_estatistica .control_navegacao{
 .cartela_estatistica:hover .next{
     opacity: 1;
 }
-
 
 
 

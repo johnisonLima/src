@@ -10,6 +10,7 @@
     -svg
         format(svg)
 */
+
 @font-face {
     font-family: 'Avant';
     src: url('../fonts/avant-GardeXLight/Avant\ GardeXLight\ Regular.otf') format(opentype);
@@ -18,4 +19,9 @@
 @font-face {
     font-family: 'Lato';
     src: url('../fonts/lato/Lato-Reg.ttf') format(truetype);
+}
+
+:root{
+    --fonte_padrao: Lato, Helvetica, sans-serif;
+    --fonte_secundaria: Avant, Helvetica, sans-serif;
 }

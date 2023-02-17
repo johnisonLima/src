@@ -45,15 +45,25 @@ $('#range_concursos').each(function(){
 // ***********************************************************************************
 // ******************************* NÚMEROS CARTELA **********************************
 // ***********************************************************************************
-let cartela_estatistica = document.querySelector('.cartela_estatistica')
+let cartela_estatistica = document.querySelector('.cartela_estatistica') 
+let cartela_aposta      = document.querySelector('.cartela_aposta')
 
-cartela_estatistica.innerHTML += cartela()
-
+cartela_estatistica.innerHTML += botoesCartela()
 cartela_estatistica = document.querySelector('.cartela_estatistica')
 
-auxBtn(cartela_estatistica)
+cartela_aposta.innerHTML = botoesCartela()
 
-function auxBtn(item){
+mediaQtdSorteado(cartela_estatistica)
+
+function botoesCartela(){
+    let btn = ''
+    for(let i=1; i<=60; i++){
+        btn += `<button>${zeroEsuerda(i)}</button>`
+    }
+    return btn
+}
+
+function mediaQtdSorteado(item){
     let btn = item.children
 
     for(let i=0; i<btn.length; i++){
@@ -63,15 +73,6 @@ function auxBtn(item){
             <div class="qtd_sorteado" id="${i}">65</div>
         `
     }
-}
-
-function cartela(){
-    let btn = ''
-    for(let i=1; i<=60; i++){
-        btn += `<button>${zeroEsuerda(i)}</button>`
-    }
-
-    return btn
 }
 
 function zeroEsuerda(numero){
