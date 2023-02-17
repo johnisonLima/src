@@ -504,26 +504,32 @@ main section.cartelas > .wrap_volante{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
     flex-wrap: wrap;
-    min-width: 280px;
+    min-width: 250px;
 }
 
 .wrap_volante .volante_body .cartela_aposta button{
-    width: calc(10% - 12px);
+    width: calc(10% - 8px);
+    min-width: 25px;
     font-family: var(--fonte_destaque);
     font-size: clamp(9px, 2.5vw, 20px);
     text-align: center;
-    color: var(--paleta_monocromatica_cor01);
+    color: var(--paleta_padrao_cor01);
     text-shadow: 1px 1px 1px #0000008f;
-    background-color: var(--paleta_padrao_cor03);
+    background-image: linear-gradient(180deg, #04C4D9 5px, #04C4D9, #0392A2);
     padding-block: 9px;
     padding-inline: 5px;
     border: none;
     outline: none;
-    border-radius: 10px;    
+    border-radius: 10px;
+    border: 2px solid var(--paleta_padrao_cor01);
+    cursor: pointer;
 }
 
+.wrap_volante .volante_body .cartela_aposta button:hover{
+    background-color: var(--paleta_padrao_cor03);
+}
 
 .teste_fontes{
     margin: 90px;
