@@ -156,7 +156,7 @@ main section.cartelas > .wrap_estatisticas{
     flex-direction: column;
     max-width: 95vw;
     margin: auto;
-
+    margin-bottom: 20px;
 }
 
 /**************************** SOMA SORTEADOS ********************************/
@@ -491,8 +491,9 @@ main section.cartelas > .wrap_volante{
     flex-direction: column;   
     max-width: 80vw;
     margin: auto;
-}
+} 
 
+/******************************  VOLANTE HEADER ******************************/
 .wrap_volante > .volante_header{
     display: flex;
     flex-direction: column;
@@ -500,6 +501,62 @@ main section.cartelas > .wrap_volante{
     margin: auto;
 }
 
+.wrap_volante .volante_header > .nuns_selected{
+    font-family: var(--fonte_destaque);
+    font-size: clamp(30px, 2.8vw, 60px);
+    color: var(--paleta_monocromatica_cor03);
+    margin-bottom: 10px;
+}
+
+.wrap_volante .volante_header .nuns_selected > .value_selected{
+    line-height: 25px;
+}
+
+.wrap_volante .volante_header .nuns_selected > .texto_selected{
+    font-size: clamp(20px, 2.8vw, 40px);
+}
+
+.wrap_volante .volante_header > .soma_apostados{
+    width: 100%;
+    max-width: 170px;
+    height: 25px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.wrap_volante .volante_header .soma_apostados > .range_soma_apostados{
+    background-image: linear-gradient(90deg, 
+        var(--paleta_padrao_cor05), 
+        var(--paleta_padrao_cor02), 
+        var(--paleta_padrao_cor01), 
+        var(--paleta_padrao_cor01), 
+        var(--paleta_padrao_cor02), 
+        var(--paleta_padrao_cor05));
+    border: none;
+}
+
+.wrap_volante .volante_header .soma_apostados .range_soma_apostados span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: var(--fonte_secundaria);
+    color: var(--paleta_monocromatica_cor01);
+    background: var(--paleta_padrao_cor04_alfa);
+    padding-inline: 13px;
+    border: none;
+    top: -3px;
+    text-shadow: 1px 0px 1px #00000096;
+    transition: .5s;
+    touch-action: pan-x;
+}
+
+/**********************************  VOLANTE ********************************/
 .wrap_volante .volante_body .cartela_aposta{
     display: flex;
     flex-direction: row;
@@ -576,16 +633,6 @@ main section.cartelas > .wrap_volante{
 .wrap_volante .volante_body .control_btn_aposta .btn_submit:hover{
     background-color: var(--paleta_padrao_cor01_darken);
 }
-
-.teste_fontes{
-    margin: 90px;
-    font-size: 30px;    
-    font-family: Lato, Helvetica, sans-serif;
-}
-
-
-
-
 
 
 

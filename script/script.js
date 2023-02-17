@@ -105,3 +105,24 @@ $('#range_soma_sorteados').each(function(){
           }
     });
 });	
+
+// ***********************************************************************************
+// ************************ TESTE RANGE SOMA APOSTAS *********************************
+// ***********************************************************************************
+$('#range_soma_apostados').each(function(){		
+    var handle = $("#handle_aposta"),
+        minValue 	= 27,
+        maxValue 	= 345;
+
+    $(this).slider({
+        animate: "fast",
+        min:minValue,
+        max:maxValue,
+        create: function(event, ui){
+            handle.text(0);	
+          },
+          change: function(event, ui){
+            handle.text(ui.value);
+          }
+    });
+});	

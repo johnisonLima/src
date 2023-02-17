@@ -38,8 +38,12 @@ main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
 /*****************************************************************************
 ********************************* WRAP VOLANTE *******************************
 ******************************************************************************/
+main section.cartelas .wrap_volante{
+    max-width: 65vw;
+}
 .wrap_volante .volante_body .cartela_aposta{
     gap: 12px;
+    justify-content: space-between;
 }
 
 .wrap_volante .volante_body .cartela_aposta button{
