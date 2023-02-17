@@ -511,7 +511,7 @@ main section.cartelas > .wrap_volante{
 
 .wrap_volante .volante_body .cartela_aposta button{
     width: calc(10% - 7px);
-    min-width: 25px;
+    min-width: 24px;
     font-family: var(--fonte_destaque);
     font-size: clamp(9px, 2.5vw, 20px);
     text-align: center;
@@ -528,6 +528,7 @@ main section.cartelas > .wrap_volante{
 }
 
 .wrap_volante .volante_body .cartela_aposta button:hover{
+    font-size: clamp(11px, 2.5vw, 22px);
     background-image: none;    
     background-color: var(--paleta_padrao_cor03);
     border: 2px solid var(--paleta_padrao_cor02);
