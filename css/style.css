@@ -483,8 +483,43 @@ main section.cartelas .cartela_estatistica .control_navegacao{
     opacity: 1;
 }
 
+/*****************************************************************************
+********************************* WRAP VOLANTE *******************************
+******************************************************************************/
+main section.cartelas > .wrap_volante{
+    display: flex;
+    flex-direction: column;   
+    max-width: 80vw;
+    margin: auto;
+}
 
+.wrap_volante > .volante_header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
 
+.wrap_volante .volante_body .cartela_aposta{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    min-width: 280px;
+}
+
+.wrap_volante .volante_body .cartela_aposta button{
+    width: calc(10% - 5px);
+    font-size: clamp(15px, 2.1vw, 20px);
+    text-align: center;
+    vertical-align: middle;
+    padding-block: 4px;
+    padding-inline: 4px;
+    border: none;
+    outline: none;
+    border-radius: 5px;    
+}
 
 
 .teste_fontes{
