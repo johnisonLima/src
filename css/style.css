@@ -190,7 +190,7 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
     font-family: var(--fonte_secundaria);
     color: var(--paleta_padrao_cor01);    
     background: none;
-    background-color: var(--paleta_padrao_cor04_);    
+    background-color: var(--paleta_padrao_cor04_alfa);    
     padding-inline: 13px;
     border: none;
     top: -5px;
@@ -504,13 +504,13 @@ main section.cartelas > .wrap_volante{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 5px;
+    gap: 3px;
     flex-wrap: wrap;
     min-width: 250px;
 }
 
-.wrap_volante .volante_body .cartela_aposta button{
-    width: calc(10% - 5px);
+.wrap_volante .volante_body .cartela_aposta button{    
+    width: calc(10% - 3px);
     min-width: 24px;
     font-family: var(--fonte_destaque);
     font-size: clamp(9px, 2.5vw, 20px);
@@ -526,6 +526,12 @@ main section.cartelas > .wrap_volante{
     border: 2px solid var(--paleta_padrao_cor01);
     cursor: pointer;
 }
+.wrap_volante .volante_body .cartela_aposta button.seleted{
+    background-image: none;    
+    background-color: var(--paleta_padrao_cor01);
+    color: var(--paleta_padrao_cor04);
+    text-shadow: none;
+}
 
 .wrap_volante .volante_body .cartela_aposta button:hover{
     background-image: none;    
@@ -536,6 +542,39 @@ main section.cartelas > .wrap_volante{
 .wrap_volante .volante_body .cartela_aposta button:active{
     color: var(--paleta_monocromatica_cor01);
     background-color: var(--paleta_padrao_cor05);
+}
+.wrap_volante .volante_body .control_btn_aposta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 8px;
+}
+.wrap_volante .volante_body .control_btn_aposta > .espaco_botao{
+    flex-grow: 5;
+    align-self: self-end;
+    height: 1px;
+    border: 1px solid var(--paleta_padrao_cor01_darken);
+}
+.wrap_volante .volante_body .control_btn_aposta > button{
+    flex-grow: 2;
+    font-family: var(--fonte_secundaria);
+    border: none;
+    padding-block: 8px;
+    cursor: pointer;
+}
+.wrap_volante .volante_body .control_btn_aposta .btn_reset{
+    background-color: var(--paleta_padrao_cor04);
+    color: var(--paleta_monocromatica_cor01);
+}
+.wrap_volante .volante_body .control_btn_aposta .btn_reset:hover{
+    background-color:  var(--paleta_padrao_cor04_darken);
+}
+.wrap_volante .volante_body .control_btn_aposta .btn_submit{
+    background-color: var(--paleta_padrao_cor01);
+}
+.wrap_volante .volante_body .control_btn_aposta .btn_submit:hover{
+    background-color: var(--paleta_padrao_cor01_darken);
 }
 
 .teste_fontes{
