@@ -758,6 +758,7 @@ main section.cartelas > .wrap_primo{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .wrap_primo table{
