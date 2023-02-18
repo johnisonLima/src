@@ -26,8 +26,14 @@
     src: url('../fonts/lobster/Lobster\ 1.4.otf') format(opentype);
 }
 
+@font-face {
+    font-family: 'Microsoft Himalaya';
+    src: url('../fonts/microsoft\ himalaya/microsoft-himalaya.ttf') format(truetype);
+}
+
 :root{
     --fonte_padrao: Lato, Helvetica, sans-serif;
     --fonte_secundaria: Avant, Helvetica, sans-serif;
-    --fonte_destaque: Lobster, 'Times New Roman', Times, serif
+    --fonte_destaque: Lobster, 'Times New Roman', Times, serif;
+    --fonte_serif: 'Microsoft Himalaya', 'Times New Roman', Times, serif;
 }
