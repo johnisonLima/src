@@ -53,3 +53,11 @@ main section.cartelas .wrap_volante{
     color: var(--paleta_padrao_cor01);
     padding-block: 9px;
 }
+
+/*****************************************************************************
+********************************* WRAP PRIMOS *******************************
+******************************************************************************/
+.wrap_primo table td:nth-child(n+12):nth-child(-n+18),
+.wrap_primo table th:nth-child(n+12):nth-child(-n+18){
+    display: table-cell;
+}
