@@ -155,6 +155,7 @@ main{
 ******************************************************************************/
 main section.cartelas > .wrap_estatisticas{
     display: flex;
+    /* display: none; */
     flex-direction: column;
     max-width: 95vw;
     margin: auto;
@@ -490,6 +491,7 @@ main section.cartelas .cartela_estatistica .control_navegacao{
 ******************************************************************************/
 main section.cartelas > .wrap_volante{
     display: flex;
+    /* display: none; */
     flex-direction: column;   
     max-width: 80vw;
     margin: auto;
@@ -771,8 +773,14 @@ main section.cartelas > .wrap_primo{
 
 .wrap_primo table td,
 .wrap_primo table th{
+    font-size: clamp(13px, 2.1vw, 16px);
     border: 1px solid var(--paleta_monocromatica_cor02);
     padding: 2px 3px;
+}
+
+.wrap_primo table td:nth-child(n+12):nth-child(-n+18),
+.wrap_primo table th:nth-child(n+12):nth-child(-n+18){
+    display: none;
 }
 
 .wrap_primo table th{
@@ -789,8 +797,6 @@ main section.cartelas > .wrap_primo{
 main section.cartelas > .teste_fontes{
     padding-block: 100px;
 }
-
-
 
 
 
