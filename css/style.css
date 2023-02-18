@@ -154,8 +154,8 @@ main{
 **************************** WRAP ESTATISTICAS *******************************
 ******************************************************************************/
 main section.cartelas > .wrap_estatisticas{
-    /* display: flex; */
-    display: none;
+    display: flex;
+    /* display: none; */
     flex-direction: column;
     max-width: 95vw;
     margin: auto;
@@ -490,8 +490,8 @@ main section.cartelas .cartela_estatistica .control_navegacao{
 ********************************* WRAP VOLANTE *******************************
 ******************************************************************************/
 main section.cartelas > .wrap_volante{
-    /* display: flex; */
-    display: none;
+    display: flex;
+    /* display: none; */
     flex-direction: column;   
     max-width: 80vw;
     margin: auto;
