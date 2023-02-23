@@ -1,10 +1,34 @@
-header{
+/*****************************************************************************
+*************************************** MAIN ********************************
+******************************************************************************/
+main{
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+        /* 1      2      3      4       5     6      7      8       9     10     11     12 */
+        'estat  estat  estat  estat  estat  estat  estat  qtdDez qtdDez qtdDez qtdDez qtdDez'
+        'volant volant volant volant volant volant volant qtdDez qtdDez qtdDez qtdDez qtdDez'
+        'aposta aposta aposta aposta aposta aposta aposta aposta aposta aposta aposta aposta'
+        'primo  primo  primo  primo  primo  primo  primo  primo  primo  primo  primo  primo'
+    ;
+}
+
+/*****************************************************************************
+****************************** READER ****************************************
+******************************************************************************/
+.header{
     background-color: green;
 }
 
 /*****************************************************************************
 ************************** CARTELAS ESTATISTICA *******************************
 ******************************************************************************/
-main section.cartelas .cartela_estatistica .media_sorteado{
+main .cartela_estatistica .media_sorteado{
+    display: block;
+}
+
+/*****************************************************************************
+*************************** QUANTIDADE DEZENAS *******************************
+******************************************************************************/
+.wrap_qtdDezenas{
     display: block;
 }

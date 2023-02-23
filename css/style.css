@@ -20,6 +20,59 @@ body{
     font-family: var(--fonte_padrao);
 }
 /*****************************************************************************
+************************************ CONTAINER *******************************
+******************************************************************************/
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer'
+}
+
+.header{
+    grid-area: header;
+    /* background-color: bisque; */
+}
+
+.wrap_estatisticas{
+    grid-area: estat;
+    background-color: chocolate;
+}
+
+.wrap_volante{
+    grid-area: volant;
+    background-color: blueviolet;
+}
+
+.wrap_primo{
+    grid-area: primo;
+    background-color: tomato;
+}
+
+.wrap_aposta{
+    grid-area: aposta;
+    background-color: burlywood;
+}
+
+.wrap_qtdDezenas{
+    grid-area: qtdDez;
+    background-color: slategrey;
+}
+
+.wrap_dezenaSelecionada{
+    grid-area: dezSele;
+    background-color: cornflowerblue;
+}
+
+.footer{
+    grid-area: footer;
+    min-height: 100px;
+    background-color: wheat;
+}
+
+/*****************************************************************************
 ****************************** READER ****************************************
 ******************************************************************************/
 header{
@@ -145,25 +198,35 @@ header .range_concursos .ui-slider-handle .value::after {
 ******************************* MAIN *****************************************
 ******************************************************************************/
 main{
-    max-width: 95vw;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:        
+        'estat'
+        'volant'
+        'primo'
+        'qtdDez'
+        'aposta'
+        'dezSele'
+    ;
+    width: 95vw;
     margin: auto;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 /*****************************************************************************
 **************************** WRAP ESTATISTICAS *******************************
 ******************************************************************************/
-main section.cartelas > .wrap_estatisticas{
+main > .wrap_estatisticas{
     display: flex;
-    /* display: none; */
     flex-direction: column;
     max-width: 95vw;
     margin: auto;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 /**************************** SOMA SORTEADOS ********************************/
-main section.cartelas .wrap_estatisticas > .soma_sorteados{
+main .wrap_estatisticas > .soma_sorteados{
     align-self: center;
     width: 70%;
     min-width: 170px;
@@ -224,7 +287,7 @@ main section.cartelas .wrap_estatisticas > .soma_sorteados{
 }
 
 /****************************** CONTROL SORTEADOS ******************************/
-main section.cartelas .wrap_estatisticas > .control_sorteado{
+main .wrap_estatisticas > .control_sorteado{
     align-self: flex-end;
     display: flex;
     flex-direction: row;
@@ -256,7 +319,7 @@ main section.cartelas .wrap_estatisticas > .control_sorteado{
 }
 
 /******************************** PRIMO SORTEADOS ********************************/
-main section.cartelas .wrap_estatisticas > .primo_sorteado{
+main .wrap_estatisticas > .primo_sorteado{
     align-self: center;
     display: flex;
     justify-content: space-between;
@@ -322,7 +385,7 @@ main section.cartelas .wrap_estatisticas > .primo_sorteado{
 }
 
 /************************ INTERVALO SORTEADOS *****************************/
-main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
+main .wrap_estatisticas > .intervalo_sorteado{
     align-self: center;
     display: flex;
     width: 25%;
@@ -359,7 +422,7 @@ main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
 }
 
 /************************* CARTELAS ESTATISTICA ******************************/
-main section.cartelas .wrap_estatisticas .cartela_estatistica{
+main .wrap_estatisticas .cartela_estatistica{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -453,7 +516,7 @@ main section.cartelas .wrap_estatisticas .cartela_estatistica{
 }
 
 /****************************** CONTROL APOSTADOS    ******************************/
-main section.cartelas .cartela_estatistica .control_navegacao{
+main .cartela_estatistica .control_navegacao{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -489,13 +552,12 @@ main section.cartelas .cartela_estatistica .control_navegacao{
 /*****************************************************************************
 ********************************* WRAP VOLANTE *******************************
 ******************************************************************************/
-main section.cartelas > .wrap_volante{
+main > .wrap_volante{
     display: flex;
-    /* display: none; */
     flex-direction: column;   
     max-width: 80vw;
     margin: auto;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 } 
 
 /******************************  VOLANTE HEADER ******************************/
@@ -753,12 +815,12 @@ main section.cartelas > .wrap_volante{
 /*****************************************************************************
 ********************************* WRAP PRIMOS *******************************
 ******************************************************************************/
-main section.cartelas > .wrap_primo{
+main > .wrap_primo{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .wrap_primo table{
@@ -799,7 +861,7 @@ main section.cartelas > .wrap_primo{
 /*****************************************************************************
 ********************************* WRAP APOSTAS *******************************
 ******************************************************************************/
-main section.cartelas .wrap_aposta > .card_aposta{
+main .wrap_aposta > .card_aposta{
     display: flex;
     flex-direction: column;   
     margin: auto;
@@ -869,21 +931,9 @@ main section.cartelas .wrap_aposta > .card_aposta{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-main section.cartelas > .teste_fontes{
-    padding-block: 100px;
+.phone_hidden,
+.tablet_hidden{
+    display: none;
 }
 
 

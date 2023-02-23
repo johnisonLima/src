@@ -1,33 +1,33 @@
 header{
     background-color: var(--cor_landscape);
 }
-main section.cartelas > .wrap_estatisticas{
+main > .wrap_estatisticas{
     max-width: 80vw;
 }
 /*****************************************************************************
 ************************** CARTELAS ESTATISTICA *******************************
 ******************************************************************************/
-main section.cartelas .cartela_estatistica{    
+main .cartela_estatistica{    
     gap: 8px;
     /* width: 80vw;
     margin: auto; */
 }
 
-main section.cartelas .cartela_estatistica button{
+main .cartela_estatistica button{
     width: calc(10% - 8px);
 }
 
 /******************************** SOMA SORTEADOS ********************************/
-main section.cartelas .wrap_estatisticas > .soma_sorteados{
+main .wrap_estatisticas > .soma_sorteados{
     max-width: 55%;
 }
 
 /******************************** PRIMO SORTEADOS ********************************/
-main section.cartelas .wrap_estatisticas > .primo_sorteado{
+main .wrap_estatisticas > .primo_sorteado{
     max-width: 250px;    
 }
 /****************************** INTERVALO SORTEADOS ******************************/
-main section.cartelas .wrap_estatisticas > .intervalo_sorteado{    
+main .wrap_estatisticas > .intervalo_sorteado{    
     height: 15px;
     max-width: 25%;
 }
@@ -38,7 +38,7 @@ main section.cartelas .wrap_estatisticas > .intervalo_sorteado{
 /*****************************************************************************
 ********************************* WRAP VOLANTE *******************************
 ******************************************************************************/
-main section.cartelas .wrap_volante{
+main .wrap_volante{
     max-width: 65vw;
 }
 
@@ -61,3 +61,4 @@ main section.cartelas .wrap_volante{
 .wrap_primo table th:nth-child(n+12):nth-child(-n+18){
     display: table-cell;
 }
+

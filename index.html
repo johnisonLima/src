@@ -32,35 +32,34 @@
     <title>Loteria</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="menu">
-                <li class="home">Início
-                <li>Sorteiro
-                    <ul class="drop-down">
-                        <li>Inserir
-                        <li>Exibir
-                        <li>Exibir
-                    </ul>
-                <li>Aposta
-                    <ul class="drop-down">
-                        <li>Inserir</li>
-                    </ul>
-                <li>Estatísticas
-                    <ul class="drop-down">
-                        <li>Distância
-                        <li>Distância Persentual
-                        <li>Detalhadas
-                        <li>Agrupadas
-                        <li>Ciclos
-                    </ul>
-            </ul>            
-        </nav>
-        <div id="range_concursos" class="range_concursos"></div>
-    </header>
-
-    <main>
-        <section class="cartelas">
+    <div class="container">
+        <header class="header">
+            <nav>
+                <ul class="menu">
+                    <li class="home">Início
+                    <li>Sorteiro
+                        <ul class="drop-down">
+                            <li>Inserir
+                            <li>Exibir
+                            <li>Exibir
+                        </ul>
+                    <li>Aposta
+                        <ul class="drop-down">
+                            <li>Inserir</li>
+                        </ul>
+                    <li>Estatísticas
+                        <ul class="drop-down">
+                            <li>Distância
+                            <li>Distância Persentual
+                            <li>Detalhadas
+                            <li>Agrupadas
+                            <li>Ciclos
+                        </ul>
+                </ul>
+            </nav>
+            <div id="range_concursos" class="range_concursos"></div>
+        </header>
+        <main>
             <div class="wrap_estatisticas">
                 <div class="soma_sorteados">
                     <div id="range_soma_sorteados" class="range_soma_sorteados">
@@ -68,7 +67,7 @@
                         <div id="handle_soma_sorteio" class="ui-slider-handle"></div>
                     </div>
                     <div class="rules_soma"></div>
-                </div>             
+                </div>
                 <div class="control_sorteado">
                     <label class="switch">
                         <input type="checkbox">
@@ -86,7 +85,7 @@
                 </div>
                 <div class="intervalo_sorteado">
                     <div class="progress_bar">75%</div>
-                </div>   
+                </div>
                 <div class="cartela_estatistica">
                     <div class="control_navegacao prev">
                         <span class="material-symbols-outlined">
@@ -98,9 +97,8 @@
                             arrow_forward_ios
                         </span>
                     </div>
-                </div>                
+                </div>
             </div>
-
             <div class="wrap_volante">
                 <div class="volante_header">
                     <div class="nuns_selected">
@@ -130,14 +128,13 @@
                     <form id="form_apostas" action="javascript:void(0)" method="post">
                         <div class="cartela_aposta"></div>
                         <div class="control_btn_aposta">
-                            <span class="espaco_botao"></span>                                
+                            <span class="espaco_botao"></span>
                             <button class="btn_reset" type="reset">Limpar</button>
                             <button class="btn_submit" type="submit">Apostar</button>
                         </div>
                     </form>
                 </div>
             </div>
-
             <div class="wrap_primo">
                 <table>
                     <caption>Dezenas primas</caption>
@@ -187,7 +184,6 @@
                     </tbody>
                 </table>
             </div>
-
             <div class="wrap_aposta">
                 <div class="card_aposta">
                     <div class="card_aposta_body">
@@ -195,32 +191,26 @@
                             <div class="num_aposta"><span>01 -</span> Dezenas selecionadas</div>
                             <div class="dezenas_aposta">18 24 27 37 47</div>
                         </div>
-
                         <div class="aposta">
                             <div class="num_aposta"><span>02 -</span> Dezenas selecionadas</div>
                             <div class="dezenas_aposta">18 24 27 37 47</div>
                         </div>
-
                         <div class="aposta">
                             <div class="num_aposta"><span>03 -</span> Dezenas selecionadas</div>
                             <div class="dezenas_aposta">18 24 27 37 47</div>
                         </div>
-
                         <div class="aposta">
                             <div class="num_aposta"><span>04 -</span> Dezenas selecionadas</div>
                             <div class="dezenas_aposta">18 24 27 37 47</div>
                         </div>
-
                         <div class="aposta">
                             <div class="num_aposta"><span>05 -</span> Dezenas selecionadas</div>
                             <div class="dezenas_aposta">18 24 27 37 47</div>
                         </div>
-
                         <div class="aposta">
                             <div class="num_aposta"><span>06 -</span> Dezenas selecionadas</div>
                             <div class="dezenas_aposta">18 24 27 37 47</div>
                         </div>
-
                         <div class="aposta">
                             <div class="num_aposta"><span>07 -</span> Dezenas selecionadas</div>
                             <div class="dezenas_aposta">18 24 27 37 47</div>
@@ -233,11 +223,11 @@
                     </div>
                 </div>
             </div>
-            <div class="teste_fontes">
-                Aqui Vai ver se elas estão fuNciOnando ou NÃO
-            </div>            
-        </section>
-    </main>
+            <div class="wrap_qtdDezenas phone_hidden">Quantidade dezenas saído</div>
+            <div class="wrap_dezenaSelecionada tablet_hidden">Dezena Selecionada</div>
+        </main>
+        <footer class="footer">Footer</footer>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.3.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" crossorigin="anonymous"></script>
     <script src="script/script.js"></script>
