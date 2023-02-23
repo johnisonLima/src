@@ -1,6 +1,10 @@
 @import url('../css/cores.css');
 @import url('../css/fontes.css');
 
+:root{
+    --largura_minima: 170px;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -19,8 +23,9 @@ body{
     overflow-x: hidden;
     font-family: var(--fonte_padrao);
 }
+
 /*****************************************************************************
-************************************ CONTAINER *******************************
+********************************** CONTAINER *********************************
 ******************************************************************************/
 .container{
     display: grid;
@@ -29,53 +34,14 @@ body{
         'header'
         'main'
         'footer'
-}
-
-.header{
-    grid-area: header;
-    /* background-color: bisque; */
-}
-
-.wrap_estatisticas{
-    grid-area: estat;
-    background-color: chocolate;
-}
-
-.wrap_volante{
-    grid-area: volant;
-    background-color: blueviolet;
-}
-
-.wrap_primo{
-    grid-area: primo;
-    background-color: tomato;
-}
-
-.wrap_aposta{
-    grid-area: aposta;
-    background-color: burlywood;
-}
-
-.wrap_qtdDezenas{
-    grid-area: qtdDez;
-    background-color: slategrey;
-}
-
-.wrap_dezenaSelecionada{
-    grid-area: dezSele;
-    background-color: cornflowerblue;
-}
-
-.footer{
-    grid-area: footer;
-    min-height: 100px;
-    background-color: wheat;
+    ;
 }
 
 /*****************************************************************************
-****************************** READER ****************************************
+************************************* READER *********************************
 ******************************************************************************/
-header{
+.container .header{
+    grid-area: header;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,13 +51,13 @@ header{
 }
 
 /************************************ MENU ********************************/
-header > nav > ul.menu{
+.header > nav > ul.menu{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-header > nav > ul.menu > li{    
-    /* display: inline-block; */
+
+.header > nav > ul.menu > li{    
     font-size: 15px;
     color: var(--paleta_padrao_cor05);
     border-radius: 2px;
@@ -99,52 +65,57 @@ header > nav > ul.menu > li{
     padding-inline: 5px;
     margin-bottom: 15px;
 }
-header > nav > ul.menu > li:hover{
-    background-color: var(--paleta_padrao_cor04);
+
+.header > nav > ul.menu > li:hover{
     color: var(--paleta_monocromatica_cor01);
     text-shadow: 1px 1px 1px #0000005d;
+    background-color: var(--paleta_padrao_cor04);
     cursor: pointer;
 }
-header > nav > ul.menu > li:hover ul, ul.drop-down{
+
+.header > nav > ul.menu > li:hover ul,
+ul.drop-down{
     display: flex;
 }
 
-header ul.menu > li > ul.drop-down{    
+.header ul.menu > li > ul.drop-down{    
     display: none;
     flex-direction: column;
-    text-align: left;
     gap: 5px;
+    text-align: left;
+    background-color: var(--paleta_padrao_cor04);
     position: absolute;
     z-index: 3;
-    background-color: var(--paleta_padrao_cor04);
 }
-header ul.menu > li > ul.drop-down > li{
+
+.header ul.menu > li > ul.drop-down > li{
     display: inline-block;
     color: var(--paleta_monocromatica_cor01);
+    text-shadow: 1px 1px 5px #0000006c;
     padding-block: 8px;    
     padding-inline: 30px;
-    text-shadow: 1px 1px 5px #0000006c;
     transition: background-color .2s ease-in;
 }
-header ul.menu > li > ul.drop-down > li:hover{
+
+.header ul.menu > li > ul.drop-down > li:hover{
     background-color: var(--paleta_padrao_cor05);
 }
 
-/************************************ RANGE ********************************/
-header .range_concursos{    
-    background: var(--paleta_padrao_cor02);
+/****************************** RANGE ************************************/
+.header .range_concursos{    
     height: 8px;
+    background: var(--paleta_padrao_cor02);
     margin-top: 30px;
     margin-bottom: 10px;
     margin-inline: 45px;    
     z-index: 0;
 }
 
-header .range_concursos .ui-widget-header{
+.header .range_concursos .ui-widget-header{
     background: var(--paleta_padrao_cor05);    
 }
 
-header .range_concursos .ui-slider-handle{
+.header .range_concursos .ui-slider-handle{
     width: 23px;
     height: 23px;    
     background: var(--paleta_padrao_cor03);
@@ -157,21 +128,23 @@ header .range_concursos .ui-slider-handle{
 
     touch-action: cross-slide-x;
 }
-header .range_concursos .ui-slider-handle:focus {
-    background: var(--paleta_padrao_cor04);
-    border: 8px solid var(--paleta_padrao_cor01);
+
+.header .range_concursos .ui-slider-handle:focus{
     width: 26px;
     height: 26px;
+    background: var(--paleta_padrao_cor04);
+    border: 8px solid var(--paleta_padrao_cor01);
     top: -10px;
 }
-header .range_concursos .ui-slider-handle .value {
+
+.header .range_concursos .ui-slider-handle .value{
     display: block;
     position: absolute;
-    background-color: var(--paleta_padrao_cor03);
     color: var(--paleta_monocromatica_cor01);
     font-size: 11px;    
     font-weight: lighter;
     text-shadow: 1px 1px 2px #00000050;
+    background-color: var(--paleta_padrao_cor03);
     border-radius: 5px;
     padding: 7px;
     bottom: 25px;
@@ -180,15 +153,16 @@ header .range_concursos .ui-slider-handle .value {
     filter: drop-shadow(0px 2px 4px #0000009d);
 }
 
-header .range_concursos .ui-slider-handle .value::after {
+.header .range_concursos .ui-slider-handle .value::after {
     content: '';
     position: absolute;
     bottom: -10px;
     left: 50%;
-    border: solid;
     height: 0;
     width: 0;
-    border-color: rgba(194, 225, 245, 0);
+    /* border-color: rgba(194, 225, 245, 0); */
+    border: solid;
+    border-color: #04acbf00;
     border-top-color: var(--paleta_padrao_cor03);
     border-width: 5px;
     margin-left: -5px;
@@ -197,17 +171,17 @@ header .range_concursos .ui-slider-handle .value::after {
 /*****************************************************************************
 ******************************* MAIN *****************************************
 ******************************************************************************/
-main{
+.container main{
     grid-area: main;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:        
-        'estat'
-        'volant'
-        'primo'
-        'qtdDez'
-        'aposta'
-        'dezSele'
+        'estat'   /*  wrap estatísticas */
+        'volant'  /*  wrap volante */
+        'primo'   /*  wrap primo */
+        'qtdDez'  /*  wrap quantdade dezena */
+        'aposta'  /*  wrap aposta */
+        'dezSele' /*  wrap dezena selecionada */
     ;
     width: 95vw;
     margin: auto;
@@ -217,21 +191,23 @@ main{
 /*****************************************************************************
 **************************** WRAP ESTATISTICAS *******************************
 ******************************************************************************/
-main > .wrap_estatisticas{
+.container main > .wrap_estatisticas{
+    grid-area: estat;
     display: flex;
     flex-direction: column;
-    max-width: 95vw;
     margin: auto;
+    /* max-width: 95vw; */
     /* margin-bottom: 50px; */
+    
+    background-color: chocolate;
 }
 
 /**************************** SOMA SORTEADOS ********************************/
 main .wrap_estatisticas > .soma_sorteados{
     align-self: center;
     width: 70%;
-    min-width: 170px;
     height: 27px;
-    margin-bottom: 15px;
+    min-width: var(--largura_minima);
     position: relative;
 }
 
@@ -248,42 +224,42 @@ main .wrap_estatisticas > .soma_sorteados{
 }
 
 .wrap_estatisticas > .soma_sorteados > .range_soma_sorteados > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 25px;
     height: 23px;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-align: center;
     font-family: var(--fonte_secundaria);
-    color: var(--paleta_padrao_cor01);    
+    font-size: 9px;
+    text-align: center;
+    color: var(--paleta_padrao_cor01);   
+    letter-spacing: 2px; 
+    text-shadow: 1px 0px 1px #00000096;
     background: none;
     background-color: var(--paleta_padrao_cor04_alfa);    
     padding-inline: 13px;
     border: none;
     top: -5px;
-    text-shadow: 1px 0px 1px #00000096;
     transition: all .5s ease-in;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 .wrap_estatisticas > .soma_sorteados > .rules_soma{
+    width: 100%;
     position: absolute;
     top: 20px;
     bottom: 0;
-    width: 100%;
 }
 
 .wrap_estatisticas > .soma_sorteados > .rules_soma::before{
     content: '';
+    background-image: linear-gradient(90deg, var(--paleta_padrao_cor01) 1px, transparent 2px);
+    background-size: 11% 100%;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(90deg, var(--paleta_padrao_cor01) 1px, transparent 2px);
-    background-size: 11% 100%;
 }
 
 /****************************** CONTROL SORTEADOS ******************************/
@@ -291,6 +267,8 @@ main .wrap_estatisticas > .control_sorteado{
     align-self: flex-end;
     display: flex;
     flex-direction: row;
+    margin-top: -25px;
+    margin-bottom: 15px;
 }
 
 .wrap_estatisticas > .control_sorteado .switch{
@@ -298,6 +276,8 @@ main .wrap_estatisticas > .control_sorteado{
     width: 35px;    
     height: 15px;
     position: relative;
+    background-color: var(--paleta_padrao_cor05);
+    border-radius: 30px;
 }
 
 .wrap_estatisticas > .control_sorteado .switch input{
@@ -318,6 +298,17 @@ main .wrap_estatisticas > .control_sorteado{
     transition: .4s;
 }
 
+.wrap_estatisticas > .control_sorteado .switch .slider::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--paleta_padrao_cor03);
+    border-radius: 30px;
+    transform: translateX(-20px);
+    transition: .4s;
+}
+
 /******************************** PRIMO SORTEADOS ********************************/
 main .wrap_estatisticas > .primo_sorteado{
     align-self: center;
@@ -325,8 +316,8 @@ main .wrap_estatisticas > .primo_sorteado{
     justify-content: space-between;
     align-items: center;
     width: 35%;
-    min-width: 170px;
-    margin-bottom: 15px;
+    min-width: var(--largura_minima);
+    margin-block: 15px;
 }
 
 .wrap_estatisticas > .primo_sorteado > .qtd_primo{
@@ -336,11 +327,11 @@ main .wrap_estatisticas > .primo_sorteado{
     align-items: center;
     width: 30px;
     height: 30px;
+    color: var(--paleta_monocromatica_cor01);
+    text-shadow: 1px 1px 1px #000000a9;
     background-image: url('../img/esfera-1.png');
     background-repeat: no-repeat;
     background-size: contain;
-    color: var(--paleta_monocromatica_cor01);
-    text-shadow: 1px 1px 1px #000000a9;
     filter: drop-shadow(2px 2px 2px #00000049);
 }
 
@@ -389,8 +380,8 @@ main .wrap_estatisticas > .intervalo_sorteado{
     align-self: center;
     display: flex;
     width: 25%;
+    height: 13px;
     min-width: 120px;
-    height: 12px;
     background-color: var(--paleta_monocromatica_cor01);
     border-radius: 5px;
     margin-bottom: 30px;
@@ -403,22 +394,11 @@ main .wrap_estatisticas > .intervalo_sorteado{
     justify-content: center;
     align-items: center;
     width: 75%;
-    background-image: linear-gradient(90deg, var(--cor06), var(--cor07));
     font-size: 10px;
     color: var(--paleta_monocromatica_cor01);
-    border-radius: 0 10px 10px 0;    
     text-shadow: 1px 1px 1px #00000063;
-}
-
-.wrap_estatisticas > .control_sorteado .switch .slider::before{
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: var(--paleta_padrao_cor03);
-    border-radius: 30px;
-    transform: translateX(-20px);
-    transition: .4s;
+    background-image: linear-gradient(90deg, var(--cor06), var(--cor07));
+    border-radius: 0 10px 10px 0;    
 }
 
 /************************* CARTELAS ESTATISTICA ******************************/
@@ -433,22 +413,23 @@ main .wrap_estatisticas .cartela_estatistica{
     position: relative;
 }
 
-.wrap_estatisticas .cartela_estatistica button{
+.wrap_estatisticas .cartela_estatistica > button{
+    width: calc(10% - 5px);
+    font-family: var(--fonte_secundaria);
+    font-size: clamp(16px, 2.5vw, 23px);
     color: var(--paleta_padrao_cor01);
+    text-align: center;
     text-shadow: 1px 1px 1px #0000006c;
     border: none;
-    outline: none;
     border-radius: 5px;
-    filter: drop-shadow(0px 0px 2px #0000003f);
-    position: relative;width: 25px;
+    outline: none;
+    position: relative;
     padding-block: 3px 10px;
     padding-inline: 2px;
-    text-align: center;
-    font-size: clamp(16px, 2.5vw, 23px);
-    width: calc(10% - 5px);
+    filter: drop-shadow(0px 0px 2px #0000003f);
 }
 
-.wrap_estatisticas .cartela_estatistica .media_sorteado{
+.wrap_estatisticas .cartela_estatistica button > .media_sorteado{
     display: none;
     font-size: 10px;
     position: absolute;
@@ -456,15 +437,11 @@ main .wrap_estatisticas .cartela_estatistica{
     left: 5px;
 }
 
-.wrap_estatisticas .cartela_estatistica .qtd_sorteado{    
+.wrap_estatisticas .cartela_estatistica button > .qtd_sorteado{    
     font-size: clamp(8px, 1.3vw, 11px);
     position: absolute;
     bottom: 2px;
     right: 5px;
-}
-
-.wrap_estatisticas .cartela_estatistica button{
-    font-family: var(--fonte_secundaria);
 }
 
 .wrap_estatisticas .cartela_estatistica button > div{
@@ -473,31 +450,31 @@ main .wrap_estatisticas .cartela_estatistica{
 
 .wrap_estatisticas .cartela_estatistica button:nth-child(-n+6){
     background-color: var(--cor00);
-    color: var(--paleta_monocromatica_cor02);
+    /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+7):nth-child(-n+12){
     background-color: var(--cor01);
-    color: var(--paleta_monocromatica_cor02);
+    /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+13):nth-child(-n+16){
     background-color: var(--cor02);
-    color: var(--paleta_monocromatica_cor02);
+    /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+17):nth-child(-n+21){
     background-color: var(--cor03);
-    color: var(--paleta_monocromatica_cor02);
+    /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+22):nth-child(-n+26){
     background-color: var(--cor04);
-    color: var(--paleta_monocromatica_cor02);
+    /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+27):nth-child(-n+28){
     background-color: var(--cor05);    
-    color: var(--paleta_monocromatica_cor02);
+    /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+29):nth-child(-n+32){
     background-color: var(--cor06);
-    color: var(--paleta_monocromatica_cor02);
+    /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+33):nth-child(-n+36){
     background-color: var(--cor07);
@@ -553,11 +530,15 @@ main .cartela_estatistica .control_navegacao{
 ********************************* WRAP VOLANTE *******************************
 ******************************************************************************/
 main > .wrap_volante{
+    grid-area: volant;
     display: flex;
     flex-direction: column;   
     max-width: 80vw;
     margin: auto;
     /* margin-bottom: 50px; */
+
+    
+    background-color: blueviolet;
 } 
 
 /******************************  VOLANTE HEADER ******************************/
@@ -816,11 +797,15 @@ main > .wrap_volante{
 ********************************* WRAP PRIMOS *******************************
 ******************************************************************************/
 main > .wrap_primo{
+    grid-area: primo;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     /* margin-bottom: 20px; */
+
+
+    background-color: tomato;
 }
 
 .wrap_primo table{
@@ -861,6 +846,11 @@ main > .wrap_primo{
 /*****************************************************************************
 ********************************* WRAP APOSTAS *******************************
 ******************************************************************************/
+main .wrap_aposta{
+    grid-area: aposta;
+
+    background-color: burlywood;
+}
 main .wrap_aposta > .card_aposta{
     display: flex;
     flex-direction: column;   
@@ -925,9 +915,30 @@ main .wrap_aposta > .card_aposta{
     border-top: 2px solid var(--paleta_monocromatica_cor01);
 }
 
+/*****************************************************************************
+************************** WRAP QUANTIDADE DEZENAS ***************************
+******************************************************************************/
+.wrap_qtdDezenas{
+    grid-area: qtdDez;
+    background-color: slategrey;
+}
 
+/*****************************************************************************
+************************** WRAP DEZENAS SELECIONADAS **************************
+******************************************************************************/
+.wrap_dezenaSelecionada{
+    grid-area: dezSele;
+    background-color: cornflowerblue;
+}
 
-
+/*****************************************************************************
+********************************* FOOTER *************************************
+******************************************************************************/
+.footer{
+    grid-area: footer;
+    min-height: 100px;
+    background-color: wheat;
+}
 
 
 

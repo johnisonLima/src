@@ -66,7 +66,7 @@ function botoesCartela(){
 function mediaQtdSorteado(item){
     let btn = item.children
 
-    for(let i=0; i<btn.length; i++){
+    for(let i=2; i<btn.length; i++){
         btn[i].setAttribute('title', i)
         btn[i].innerHTML += `
             <div class="media_sorteado" id="${i}">9.67</div>
