@@ -3,6 +3,8 @@
         format(opentype)
     -truetype (ttf)
         format(truetype)
+    -woff (woff)
+        format(woff)
     -embedded-opentype
         format(embedded-opentype)
     -truetype-aat (Apple Advanced Typography)
@@ -16,6 +18,7 @@
     src: url('../fonts/avant-GardeXLight/Avant\ GardeXLight\ Regular.otf')  format(opentype),
          url('../fonts/avant-GardeXLight/Avant-GardeXLight-Regular.ttf')    format(truetype),
          url('../fonts/avant-GardeXLight/Avant-GardeXLight-Regular.woff')   format(woff),
+         url('../fonts/avant-GardeXLight/Avant-GardeXLight-Regular.woff2')  format(woff2),
          url('../fonts/avant-GardeXLight/Avant\ GardeXLight\ Regular.eot')  
          format(embedded-opentype);
 }
