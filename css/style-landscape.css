@@ -1,23 +1,15 @@
-header{
+.header{
     background-color: var(--cor_landscape);
 }
+
+/*****************************************************************************
+**************************** WRAP ESTATISTICAS *******************************
+******************************************************************************/
 main > .wrap_estatisticas{
     max-width: 80vw;
 }
-/*****************************************************************************
-************************** CARTELAS ESTATISTICA *******************************
-******************************************************************************/
-main .cartela_estatistica{    
-    gap: 8px;
-    /* width: 80vw;
-    margin: auto; */
-}
 
-main .cartela_estatistica button{
-    width: calc(10% - 8px);
-}
-
-/******************************** SOMA SORTEADOS ********************************/
+/**************************** SOMA SORTEADOS ********************************/
 main .wrap_estatisticas > .soma_sorteados{
     max-width: 55%;
 }
@@ -26,30 +18,41 @@ main .wrap_estatisticas > .soma_sorteados{
 main .wrap_estatisticas > .primo_sorteado{
     max-width: 250px;    
 }
+
 /****************************** INTERVALO SORTEADOS ******************************/
 main .wrap_estatisticas > .intervalo_sorteado{    
     height: 15px;
     max-width: 25%;
 }
+
 .wrap_estatisticas > .intervalo_sorteado > .progress_bar{    
     font-size: 12px;
+}
+
+/************************** CARTELAS ESTATISTICA ****************************/
+main .cartela_estatistica{    
+    gap: 5px;
+}
+
+main .cartela_estatistica button{
+    width: calc(10% - 8px);
 }
 
 /*****************************************************************************
 ********************************* WRAP VOLANTE *******************************
 ******************************************************************************/
 main .wrap_volante{
-    max-width: 65vw;
+    max-width: 75vw;
 }
 
 /**********************************  VOLANTE ********************************/
 .wrap_volante .volante_body .cartela_aposta{
-    gap: 12px;
+    gap: 5px;
     justify-content: space-between;
 }
 
 .wrap_volante .volante_body .cartela_aposta button{
-    width: calc(10% - 12px);
+    width: calc(10% - 5px);
     color: var(--paleta_padrao_cor01);
     padding-block: 9px;
 }
