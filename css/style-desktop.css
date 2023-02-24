@@ -1,16 +1,25 @@
 /*****************************************************************************
-*************************************** MAIN ********************************
+******************************* MAIN *****************************************
 ******************************************************************************/
-main{
+.container main{
     grid-template-columns: repeat(12, 1fr);
+    gap: 50px;
     grid-template-areas:
         /* 1      2      3      4       5     6      7      8       9     10     11     12*/
-        'estat  estat  estat  estat  estat  estat  volant volant volant volant dezSele dezSele'
+        'estat  estat  estat  estat  estat  volant  volant volant volant volant dezSele dezSele'
         'qtdDez qtdDez qtdDez qtdDez qtdDez qtdDez qtdDez qtdDez qtdDez qtdDez dezSele  dezSele'
         'aposta aposta aposta aposta aposta aposta aposta aposta aposta aposta dezSele dezSele'
         'primo  primo  primo  primo  primo  primo  primo  primo  primo  primo  dezSele dezSele'
     ;
     width: 98vw;
+}
+
+/*****************************************************************************
+*************************** QUANTIDADE DEZENAS *******************************
+******************************************************************************/
+main > .wrap_qtdDezenas{
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .wrap_dezenaSelecionada{

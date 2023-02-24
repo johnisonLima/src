@@ -47,6 +47,11 @@ $('#range_concursos').each(function(){
 // ***********************************************************************************
 let cartela_estatistica = document.querySelector('.cartela_estatistica') 
 let cartela_aposta      = document.querySelector('.cartela_aposta')
+let qtdDezena_1             = document.querySelectorAll('.volante_qtdDezenas')
+
+qtdDezena_1[0].innerHTML = botoesCartela()
+qtdDezena_1[1].innerHTML = botoesCartela()
+qtdDezena_1[2].innerHTML = botoesCartela()
 
 cartela_estatistica.innerHTML += botoesCartela()
 cartela_estatistica = document.querySelector('.cartela_estatistica')

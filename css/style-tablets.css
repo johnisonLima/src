@@ -1,34 +1,80 @@
 /*****************************************************************************
-*************************************** MAIN ********************************
+******************************* MAIN *****************************************
 ******************************************************************************/
-main{
+.container main{
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
         /* 1      2      3      4       5     6      7      8       9     10     11     12 */
-        'estat  estat  estat  estat  estat  estat  estat  qtdDez qtdDez qtdDez qtdDez qtdDez'
-        'volant volant volant volant volant volant volant qtdDez qtdDez qtdDez qtdDez qtdDez'
-        'aposta aposta aposta aposta aposta aposta aposta aposta aposta aposta aposta aposta'
-        'primo  primo  primo  primo  primo  primo  primo  primo  primo  primo  primo  primo'
+        'estat  estat  estat  estat  estat  estat  estat    .     qtdDez qtdDez qtdDez qtdDez'
+        'volant volant volant volant volant volant volant   .     aposta aposta aposta aposta'
+        'primo  primo  primo  primo  primo  primo  primo    .       .       .      .        .'
     ;
 }
 
-/*****************************************************************************
-****************************** READER ****************************************
-******************************************************************************/
-.header{
-    background-color: green;
-}
 
 /*****************************************************************************
 ************************** CARTELAS ESTATISTICA *******************************
 ******************************************************************************/
-main .cartela_estatistica .media_sorteado{
+.wrap_estatisticas .cartela_estatistica > button{
+    padding-block: 13px;
+}
+.wrap_estatisticas .cartela_estatistica button > .media_sorteado{
     display: block;
+}
+
+/*****************************************************************************
+********************************* WRAP VOLANTE *******************************
+******************************************************************************/
+.wrap_volante .volante_header > .nuns_selected{
+    font-family: var(--fonte_destaque);
+    font-size: clamp(70px, 2.8vw, 80px);
+}
+
+.wrap_volante .volante_header .nuns_selected > .texto_selected{
+    font-size: clamp(40px, 2.8vw, 70px);
 }
 
 /*****************************************************************************
 *************************** QUANTIDADE DEZENAS *******************************
 ******************************************************************************/
-.wrap_qtdDezenas{
-    display: block;
+main > .wrap_qtdDezenas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrap_qtdDezenas > div{
+    margin-bottom: 20px;
+}
+
+.wrap_qtdDezenas .volante_qtdDezenas{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.wrap_qtdDezenas .label_qtdDezenas{
+    font-family: var(--fonte_destaque);
+    line-height: 16px;
+    color: var(--paleta_padrao_cor05);
+    margin-bottom: 8px;
+}
+
+.wrap_qtdDezenas .volante_qtdDezenas > button{
+    font-family: var(--fonte_secundaria);
+    color: var(--paleta_monocromatica_cor01);
+    text-shadow: 1px 0px 1px #000000ab;
+    background-color: var(--paleta_padrao_cor05);
+    padding: 3px 4px;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+
+/*****************************************************************************
+********************************* WRAP APOSTAS *******************************
+******************************************************************************/
+main .wrap_aposta{
+    align-self: center;
 }

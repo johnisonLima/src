@@ -187,7 +187,6 @@ ul.drop-down{
     ;
     width: 95vw;
     margin: auto;
-    /* margin-top: 30px; */
 }
 
 /*****************************************************************************
@@ -433,7 +432,7 @@ main .wrap_estatisticas .cartela_estatistica{
     display: none;
     font-size: 10px;
     position: absolute;
-    top: 1px;
+    top: 2px;
     left: 5px;
 }
 
@@ -568,7 +567,7 @@ main > .wrap_volante{
     font-family: var(--fonte_destaque);
     font-size: clamp(30px, 2.8vw, 60px);
     color: var(--paleta_monocromatica_cor03);
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .wrap_volante .volante_header .nuns_selected > .texto_selected{
@@ -945,7 +944,8 @@ main .wrap_aposta > .card_aposta{
 ******************************************************************************/
 .wrap_qtdDezenas{
     grid-area: qtdDez;
-    background-color: slategrey;
+
+    /* background-color: slategrey; */
 }
 
 /*****************************************************************************
@@ -953,6 +953,7 @@ main .wrap_aposta > .card_aposta{
 ******************************************************************************/
 .wrap_dezenaSelecionada{
     grid-area: dezSele;
+
     background-color: cornflowerblue;
 }
 
@@ -962,6 +963,7 @@ main .wrap_aposta > .card_aposta{
 .footer{
     grid-area: footer;
     min-height: 100px;
+
     background-color: wheat;
 }
 

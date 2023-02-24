@@ -45,6 +45,11 @@ main .wrap_volante{
     max-width: 75vw;
 }
 
+/*********************  INTERVALO ENTRE NÚMEROS ****************************/
+.wrap_volante .volante_header > .intervalo_apostado{
+    height: 16px;
+}
+
 /**********************************  VOLANTE ********************************/
 .wrap_volante .volante_body .cartela_aposta{
     gap: 5px;
