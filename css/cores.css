@@ -17,19 +17,47 @@
     --paleta_monocromatica_cor04: #262626;
     --paleta_monocromatica_cor05: #0D0D0D;
 
-    --cor20Mais: #115959;
-    --cor10e20: #0B508C;
-    --cor09: #2474A6;
-    --cor08: #8C3E62;    
-    --cor07: #c95f5f;
-    --cor06: #F2BC8D;
-    --cor05: #D9C9BA;
-    --cor04: #2EF2BB;
-    --cor03: #30F2CF;
-    --cor02: #C8C5D9;
-    --cor01: #BACDD9;
-    --cor00: #f0d6c7;
+    --palheta_cor20Mais: #115959;
+    --palheta_cor10e20: #0B508C;
+    --palheta_cor09: #2474A6;
+    --palheta_cor08: #8C3E62;    
+    --palheta_cor07: #c95f5f;
+    --palheta_cor06: #F2BC8D;
+    --palheta_cor05: #D9C9BA;
+    --palheta_cor04: #2EF2BB;
+    --palheta_cor03: #30F2CF;
+    --palheta_cor02: #BACDD9;
+    --palheta_cor01: #f298fa;
+    --palheta_cor00: #f0d6c7;
 
-    --cor_landscape: red;
+    --palheta_cor09_ligthten: #3892ca;
+    --palheta_cor09_darken: #156292;
+
+    --palheta_cor08_ligthten: #b45883;    
+    --palheta_cor08_darken: #7c3355;    
+
+    --palheta_cor07_ligthten: #dd7575;
+    --palheta_cor07_darken: #a34747;
+
+    --palheta_cor06_ligthten: #f1cfb1;
+    --palheta_cor06_darken: #d39d6d;
+
+    --palheta_cor05_ligthten: #ebcfb8;
+    --palheta_cor05_darken: #bba590;
+
+    --palheta_cor04_ligthten: #4ffaca;
+    --palheta_cor04_darken: #25ce9e;
+
+    --palheta_cor03_ligthten: #71fde3;
+    --palheta_cor03_darken: #2ad1b2;
+
+    --palheta_cor02_ligthten: #cbe1ee;
+    --palheta_cor02_darken: #a1b9c9;
+
+    --palheta_cor01_ligthten: #f8a7ff;
+    --palheta_cor01_darken: #e084e9;
+
+    --palheta_cor00_ligthten: #fae1d3;
+    --palheta_cor00_darken: #dbc5b8;
 }
 

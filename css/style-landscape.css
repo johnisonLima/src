@@ -1,3 +1,6 @@
+@import url('../css/cores.css');
+@import url('../css/fontes.css');
+
 .header{
     background-color: var(--cor_landscape);
 }

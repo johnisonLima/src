@@ -396,7 +396,7 @@ main .wrap_estatisticas > .intervalo_sorteado{
     font-size: 10px;
     color: var(--paleta_monocromatica_cor01);
     text-shadow: 1px 1px 1px #00000063;
-    background-image: linear-gradient(90deg, var(--cor06), var(--cor07));
+    background-image: linear-gradient(90deg, var(--palheta_cor06), var(--palheta_cor07));
     border-radius: 0 10px 10px 0;    
 }
 
@@ -448,47 +448,47 @@ main .wrap_estatisticas .cartela_estatistica{
 }
 
 .wrap_estatisticas .cartela_estatistica button:nth-child(-n+6){
-    background-color: var(--cor00);
+    background-color: var(--palheta_cor00);
     /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+7):nth-child(-n+12){
-    background-color: var(--cor01);
+    background-color: var(--palheta_cor01);
     /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+13):nth-child(-n+16){
-    background-color: var(--cor02);
+    background-color: var(--palheta_cor02);
     /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+17):nth-child(-n+21){
-    background-color: var(--cor03);
+    background-color: var(--palheta_cor03);
     /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+22):nth-child(-n+26){
-    background-color: var(--cor04);
+    background-color: var(--palheta_cor04);
     /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+27):nth-child(-n+28){
-    background-color: var(--cor05);    
+    background-color: var(--palheta_cor05);    
     /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+29):nth-child(-n+32){
-    background-color: var(--cor06);
+    background-color: var(--palheta_cor06);
     /* color: var(--paleta_monocromatica_cor02); */
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+33):nth-child(-n+36){
-    background-color: var(--cor07);
+    background-color: var(--palheta_cor07);
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+37):nth-child(-n+40){
-    background-color: var(--cor08);
+    background-color: var(--palheta_cor08);
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+41):nth-child(-n+42){
-    background-color: var(--cor09);
+    background-color: var(--palheta_cor09);
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+43):nth-child(-n+53){
-    background-color: var(--cor10e20);
+    background-color: var(--palheta_cor10e20);
 }
 .wrap_estatisticas .cartela_estatistica button:nth-child(n+54):nth-child(-n+62){
-    background-color: var(--cor20Mais);
+    background-color: var(--palheta_cor20Mais);
 }
 
 /****************************** CONTROL APOSTADOS    ******************************/
@@ -871,8 +871,6 @@ main > .wrap_primo{
 ******************************************************************************/
 main .wrap_aposta{
     grid-area: aposta;
-
-    /* background-color: burlywood; */
 }
 
 main .wrap_aposta > .card_aposta{
@@ -944,8 +942,6 @@ main .wrap_aposta > .card_aposta{
 ******************************************************************************/
 .wrap_qtdDezenas{
     grid-area: qtdDez;
-
-    /* background-color: slategrey; */
 }
 
 /*****************************************************************************
@@ -953,8 +949,6 @@ main .wrap_aposta > .card_aposta{
 ******************************************************************************/
 .wrap_dezenaSelecionada{
     grid-area: dezSele;
-
-    background-color: cornflowerblue;
 }
 
 /*****************************************************************************
