@@ -30,6 +30,7 @@ body{
 .container{
     display: grid;
     grid-template-columns: 1fr;
+    gap: 30px;
     grid-template-areas:
         'header'
         'main'
@@ -175,6 +176,7 @@ ul.drop-down{
     grid-area: main;
     display: grid;
     grid-template-columns: 1fr;
+    gap: 20px;
     grid-template-areas:        
         'estat'   /*  wrap estatísticas */
         'volant'  /*  wrap volante */
@@ -196,10 +198,8 @@ ul.drop-down{
     display: flex;
     flex-direction: column;
     margin: auto;
-    /* max-width: 95vw; */
-    /* margin-bottom: 50px; */
     
-    background-color: chocolate;
+    /* background-color: chocolate; */
 }
 
 /**************************** SOMA SORTEADOS ********************************/
@@ -550,10 +550,8 @@ main > .wrap_volante{
     flex-direction: column;   
     max-width: 85vw;
     margin: auto;
-    /* margin-bottom: 50px; */
-
     
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 } 
 
 /******************************  VOLANTE HEADER ******************************/
@@ -563,7 +561,6 @@ main > .wrap_volante{
     align-items: center;
     min-width: var(--largura_minima);
     text-align: center;
-    /* margin: auto; */
 }
 
 /**************************  NÚMEROS SELECIONADOS ****************************/
@@ -830,7 +827,7 @@ main > .wrap_primo{
     justify-content: center;
     align-items: center;
 
-    background-color: tomato;
+    /* background-color: tomato; */
 }
 
 .wrap_primo table{
@@ -876,7 +873,7 @@ main > .wrap_primo{
 main .wrap_aposta{
     grid-area: aposta;
 
-    background-color: burlywood;
+    /* background-color: burlywood; */
 }
 
 main .wrap_aposta > .card_aposta{
