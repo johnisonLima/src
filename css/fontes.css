@@ -13,8 +13,9 @@
 
 @font-face {
     font-family: 'Avant';
-    src: url('../fonts/avant-GardeXLight/Avant\ GardeXLight\ Regular.otf') format(opentype),
-    url('../fonts/avant-GardeXLight/Avant-GardeXLight-Regular.ttf') format(truetype);
+    src: url('../fonts/avant-GardeXLight/Avant\ GardeXLight\ Regular.otf')  format(opentype),
+         url('../fonts/avant-GardeXLight/Avant-GardeXLight-Regular.ttf')    format(truetype),url('../fonts/avant-GardeXLight/Avant\ GardeXLight\ Regular.eot')  
+         format(embedded-opentype);
 }
 
 @font-face {
