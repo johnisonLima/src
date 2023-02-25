@@ -11,18 +11,14 @@
         exit("O arquivo $file_funcoes não foi localizado, contate o administrador.");
     }
 
-    // Criando função autoload
-    define('CLASS_DIR', 'classes/');
+    // Criando função autoload    
 
-    set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+    /// Adicionar a classe dir para incluir o caminho
+    set_include_path(get_include_path().PATH_SEPARATOR.CLASSESPATH);
 
+    // Registrar e retornar extensões de arquivo padrão para spl_autoload
     spl_autoload_extensions('.class.php');
 
+    // Registra a função na pilha de __autoload da SPL. Se a pilha ainda não estiver ativa, ela será ativada.
     spl_autoload_register();
-
-
-    // printf(spl_autoload_register());
-
-
-
 ?>

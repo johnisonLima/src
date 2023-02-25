@@ -54,6 +54,10 @@
             }
         }// selecionaTudo
 
+        public function selecionaPeriodo(){
+
+        }
+
         public function executaSql($sql = NULL){
             if($sql != NULL){
                 $query = mysqli_query($this->conexao, $sql) or ($this->trataErro(__FILE__, __FUNCTION__));
