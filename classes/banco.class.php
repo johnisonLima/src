@@ -54,6 +54,20 @@
             }
         }// selecionaTudo        
 
+        public function selecionaColuna($objeto, $coluna){
+            if(!$this->verificaVazia($objeto)){
+                $sql = "SELECT $coluna FROM $objeto->tabela";
+                if($objeto->extras_select != NULL){
+                    $sql.= " ". $objeto->extras_select;
+                }
+                //echo($sql);
+                return $this->executaSql($sql);
+            }
+            else{
+                echo "Tabela vázia!";
+            }
+        }// selecionaColuna
+
         public function executaSql($sql = NULL){
             if($sql != NULL){
                 $query = mysqli_query($this->conexao, $sql) or ($this->trataErro(__FILE__, __FUNCTION__));
@@ -126,5 +140,7 @@
                 exit($result);
             }
         }// trataerro
+
+        // Não pegar a função retornaMax
     }// banco
 ?>
