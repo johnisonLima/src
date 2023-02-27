@@ -52,11 +52,7 @@
             else{
                 echo "Tabela vázia!";
             }
-        }// selecionaTudo
-
-        public function selecionaPeriodo(){
-
-        }
+        }// selecionaTudo        
 
         public function executaSql($sql = NULL){
             if($sql != NULL){

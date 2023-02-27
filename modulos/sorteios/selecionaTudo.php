@@ -3,5 +3,5 @@
 
     $st = new sorteiosMega;
 
-    print_r($st->selecionaTudo());
+    echo $st->selecionaTudo();
 ?>
