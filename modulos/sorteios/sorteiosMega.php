@@ -84,6 +84,14 @@
 
             return retornaTodaColuna($st, $coluna);
         }// buscaUltimoRegistro
+
+        public function buscaPrimeiroRegistro($coluna){
+            $st = new sorteios();
+
+            $st->extras_select = " ORDER BY $coluna ASC LIMIT 1";            
+
+            return retornaTodaColuna($st, $coluna);
+        }// buscaPrimeiroRegistro
     } 
     
     function retornaTodosRegistros($objeto){
