@@ -10,7 +10,8 @@ HttpPost(selecionaTudo, () =>{
 
         rangeConcurso()
         rangeSomaSorteados(responseTudo)
-        qtdPrimosSorteados(responseTudo)        
+        qtdPrimosSorteados(responseTudo)  
+        intervaloSorteado(responseTudo)     
     });
 
     error(() => {})

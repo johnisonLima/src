@@ -94,6 +94,8 @@ function rangeConcurso(){
                 let responsePeriodo = JSON.parse(responseText.trim())
 
                 rangeSomaSorteados(responsePeriodo)
+                qtdPrimosSorteados(responsePeriodo)  
+                intervaloSorteado(responsePeriodo)     
 
                 // console.log(responsePeriodo)
             }
@@ -133,59 +135,70 @@ function rangeSomaSorteados(objetos){
 }
 
 function qtdPrimosSorteados(objetos){
+    let primosSOrteado       = document.querySelector('.primo_sorteado')
+
     let contPrimos,
-        ocorrencia_0 		= [],
-        ocorrencia_1 		= [],
-        ocorrencia_2 		= [],
-        ocorrencia_3 		= [],
-        ocorrencia_4 		= [],
-        ocorrencia_5 		= [],
-        ocorrencia_6 		= [],
-        porcentagemPrimos 	= [],
-        contPrimoCurrent	= 0
+        selectPrimo,
+        ocorrenciaPrimos 	= [],
+		porcentagemPrimos 	= []
+
+        primosSOrteado.innerHTML = ''
+
+    // Definindo o tamanho do array e inicializando todos os valores com zero
+    ocorrenciaPrimos.length = 7
+    ocorrenciaPrimos.fill(0)    
 
     for(let i=0; i<objetos.length; i++){
         contPrimos = 0
-        let ultimoSorteio = Object.values(objetos[i])
+        let ultimoSorteio = Object.values(objetos[i])// Pegando sempre o último concurso
 
+        // Verificando se as dezenas do concurso é primo
         for(let j=2; j<=7; j++){
-            if(éPrimo(ultimoSorteio[j])){
+            if(éPrimo(ultimoSorteio[j])){                
                 contPrimos++
             }
         }
-        if(contPrimos == 0){
-			ocorrencia_0.push(contPrimos);
-		}	
-		if(contPrimos == 1){
-			ocorrencia_1.push(contPrimos);
-		}	
-		if(contPrimos == 2){
-			ocorrencia_2.push(contPrimos);
-		}	
-		if(contPrimos == 3){
-			ocorrencia_3.push(contPrimos);
-		}	
-		if(contPrimos == 4){
-			ocorrencia_4.push(contPrimos);
-		}		
-		if(contPrimos == 5){
-			ocorrencia_5.push(contPrimos);
-		}	
-		if(contPrimos == 6){
-			ocorrencia_6.push(contPrimos);
-		}		
+
+        // Colocando a ocorrência dos primos de acordo com as vezes
+        for(let j=0; j<=6; j++){
+            if(contPrimos == j){
+                ocorrenciaPrimos[j] = ocorrenciaPrimos[j]+1
+            }
+        }       
+                
+        i == 0 ? selectPrimo = contPrimos : ''
     }
 
-    porcentagemPrimos.push([ocorrencia_0.length*100/objetos.length, 0]);
-	porcentagemPrimos.push([ocorrencia_1.length*100/objetos.length, 1]);
-	porcentagemPrimos.push([ocorrencia_2.length*100/objetos.length, 2]);
-	porcentagemPrimos.push([ocorrencia_3.length*100/objetos.length, 3]);
-	porcentagemPrimos.push([ocorrencia_4.length*100/objetos.length, 4]);
-	porcentagemPrimos.push([ocorrencia_5.length*100/objetos.length, 5]);
-	porcentagemPrimos.push([ocorrencia_6.length*100/objetos.length, 6]);
+    // Convertendo as ocorrências em porcentagem
+    for(let i=0; i<=6; i++){
+        porcentagemPrimos.push([ocorrenciaPrimos[i]*100/objetos.length, i])
+    }
 
-    console.table(porcentagemPrimos)
+    // Ordenando de acordo com a primeria coluna
+    porcentagemPrimos.sort( (a, b) =>{
+        if(a[0] === b[0]){
+            return 0
+        }
+        return (a[0] < b[0]) ? -1 : 1        
+    })
 
+    for(let i=0; i<porcentagemPrimos.length; i++){
+        primosSOrteado.innerHTML += 
+        `<span class="qtd_primo ${porcentagemPrimos[i][1] == selectPrimo ? 'select' : ''}" title="${porcentagemPrimos[i][0]}">
+            ${porcentagemPrimos[i][1]}
+        </span>`
+    }    
+}
+
+function intervaloSorteado(objetos){
+    let intervaloSOrteado    = document.querySelector('.intervalo_sorteado')
+    let ultimoSorteio = Object.values(objetos[0])
+
+    // Pegando a diferença entre a primeira e última dezena   
+    let intervalo = Number(ultimoSorteio[7]) - Number(ultimoSorteio[2])+1
+
+    intervaloSOrteado.lastElementChild.style.width = `${intervalo}%`
+    intervaloSOrteado.lastElementChild.innerText = intervalo
 }
 
 function éPrimo(num){
