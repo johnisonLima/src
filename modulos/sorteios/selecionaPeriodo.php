@@ -5,8 +5,8 @@
 
     // $numero     = $_POST['numero'];
     $coluna     = 'concurso';
-    // $valorMin   = $_POST['minimum_range'];
-    // $valorMax   = $_POST['maximum_range'];
+    $valorMin   = $_POST['min'];
+    $valorMax   = $_POST['max'];
 
-    echo $st->selecionaPeriodo($coluna, 2550, 2561);
+    echo $st->selecionaPeriodo($coluna, $valorMin, $valorMax);
 ?>
