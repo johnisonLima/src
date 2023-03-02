@@ -12,6 +12,7 @@ HttpPost(selecionaTudo, () =>{
         rangeSomaSorteados(responseTudo)
         qtdPrimosSorteados(responseTudo)  
         intervaloSorteado(responseTudo)     
+        cartelaSorteados(responseTudo)
     });
 
     error(() => {})

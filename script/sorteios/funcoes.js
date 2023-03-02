@@ -96,8 +96,6 @@ function rangeConcurso(){
                 rangeSomaSorteados(responsePeriodo)
                 qtdPrimosSorteados(responsePeriodo)  
                 intervaloSorteado(responsePeriodo)     
-
-                // console.log(responsePeriodo)
             }
         })
     }
@@ -199,6 +197,52 @@ function intervaloSorteado(objetos){
 
     intervaloSOrteado.lastElementChild.style.width = `${intervalo}%`
     intervaloSOrteado.lastElementChild.innerText = intervalo
+}
+
+function cartelaSorteados(objetos){
+    let dezena          = 1
+
+    while(dezena <= 60){
+        let totalDezena         = 0,
+            penultimaSaida      = true,
+            ultimoConcurso      = 0,
+            intervaloConcursos  = 0,
+            auxilixar
+        
+        for(let i=0; i<=objetos.length-1; i++){
+            let dezenaUm     = objetos[i].primeiraDezena, 
+                dezenaDois   = objetos[i].segundaDezena, 
+                dezenaTrês   = objetos[i].terceiraDezena, 
+                dezenaQuatro = objetos[i].quartaDezena, 
+                dezenaCinco  = objetos[i].quintaDezena, 
+                dezenaSeis   = objetos[i].sextaDezena,
+                concurso     = objetos[i].concurso
+
+            if(dezenaUm == dezena ||  dezenaDois == dezena || dezenaTrês == dezena || 
+               dezenaQuatro == dezena || dezenaCinco == dezena || dezenaSeis == dezena){
+
+                if(totalDezena == 0){
+                    // Último concurso que a dezena saiu
+                    ultimoConcurso = Number(concurso)
+                }
+                else{
+                    // Concursos que a dezena saiu
+                    // Intervalo entra as saídas da dezena
+                    intervaloConcursos = intervaloConcursos = (auxilixar - concurso)
+                    console.log(`${intervaloConcursos} - ${dezena}`)
+
+                    if(penultimaSaida){
+                        // Penultima vez que o dezena saiu  
+                        penultimaSaida = false
+                    }                    
+                }
+
+                auxilixar = concurso
+				totalDezena++;
+            }
+        }
+        dezena++;
+    }
 }
 
 function éPrimo(num){
