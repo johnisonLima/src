@@ -200,14 +200,16 @@ function intervaloSorteado(objetos){
 }
 
 function cartelaSorteados(objetos){
-    let dezena          = 1
+    let dezena              = 1,
+        cartelaSorteados    = []
 
     while(dezena <= 60){
-        let totalDezena         = 0,
-            penultimaSaida      = true,
-            ultimoConcurso      = 0,
-            intervaloConcursos  = 0,
-            auxilixar
+        let totalDezena             = 0,
+            penultimoConcursoDezena = true,
+            ultimoConcursoDezena    = 0,
+            intervaloConcursos      = 0,
+            mediaIntervaloDezena    = 0,
+            concursoAnterior        = 0
         
         for(let i=0; i<=objetos.length-1; i++){
             let dezenaUm     = objetos[i].primeiraDezena, 
@@ -216,33 +218,112 @@ function cartelaSorteados(objetos){
                 dezenaQuatro = objetos[i].quartaDezena, 
                 dezenaCinco  = objetos[i].quintaDezena, 
                 dezenaSeis   = objetos[i].sextaDezena,
-                concurso     = objetos[i].concurso
+                concurso     = Number(objetos[i].concurso)
 
             if(dezenaUm == dezena ||  dezenaDois == dezena || dezenaTrês == dezena || 
                dezenaQuatro == dezena || dezenaCinco == dezena || dezenaSeis == dezena){
 
                 if(totalDezena == 0){
                     // Último concurso que a dezena saiu
-                    ultimoConcurso = Number(concurso)
+                    ultimoConcursoDezena = concurso
                 }
                 else{
                     // Concursos que a dezena saiu
                     // Intervalo entra as saídas da dezena
-                    intervaloConcursos = intervaloConcursos = (auxilixar - concurso)
-                    console.log(`${intervaloConcursos} - ${dezena}`)
+                    intervaloConcursos += (concursoAnterior - concurso)
 
-                    if(penultimaSaida){
+                    if(penultimoConcursoDezena){
                         // Penultima vez que o dezena saiu  
-                        penultimaSaida = false
+                        penultimoConcursoDezena = false
                     }                    
                 }
 
-                auxilixar = concurso
+                concursoAnterior = concurso
 				totalDezena++;
             }
         }
-        dezena++;
+        // Calculando média e colocando apenas duas casas decimais
+        mediaIntervaloDezena = Number((intervaloConcursos/totalDezena).toFixed(2))  
+        
+        // Inserindo os valores DEZENA, ÚLTIMO SORTEIOS QUE A DEZENA SAIU, MÉDIA SAÍDA E TOTAL
+        cartelaSorteados.push([dezena, ultimoConcursoDezena, mediaIntervaloDezena, totalDezena])
+
+        dezena++
+    }    
+
+    // Ordenando em ordem decrescente de acordo com segundo índice
+    cartelaSorteados.sort((a, b) =>{
+        if(a[1] === b[1]){
+            return 0
+        }
+        return (a[1] > b[1]) ? -1 : 1        
+    })
+
+    let cartela = document.querySelector('.cartela_estatistica')
+
+    for(let i=0; i<cartelaSorteados.length; i++){
+        let dezena          = cartelaSorteados[i][0],
+            intervaloDezena = ultimoConcursoAtual - cartelaSorteados[i][1],
+            mediaInDezena   = cartelaSorteados[i][2],
+            totalDezena     = cartelaSorteados[i][3]
+
+        cartela.innerHTML += 
+            `<button class="${verificaIntervalo(intervaloDezena)}">
+                ${dezena}
+                <div class="media_sorteado">${mediaInDezena}</div>
+                <div class="qtd_sorteado">${totalDezena}</div>
+            </button>`
+
+        cartela.lastChild.setAttribute('id', dezena)
+        cartela.lastChild.setAttribute('title', intervaloDezena)
     }
+    
+    function verificaIntervalo(intervalo){
+        if(intervalo == 0){
+            return 'zeroIntervalo'
+        }
+        else if(intervalo == 1){
+            return 'umIntervalo'
+        }
+        else if(intervalo == 2){
+            return 'doisIntervalo'
+        }
+        else if(intervalo == 3){
+            return 'tresIntervalo'
+        }
+        else if(intervalo == 4){
+            return 'quatroIntervalo'
+        }
+        else if(intervalo == 5){
+            return 'cincoIntervalo'
+        }
+        else if(intervalo == 6){
+            return 'seisIntervalo'
+        }
+        else if(intervalo == 7){
+            return 'seteIntervalo'
+        }
+        else if(intervalo == 8){
+            return 'oitoIntervalo'
+        }
+        else if(intervalo == 9){
+            return 'noveIntervalo'
+        }
+        else if(intervalo > 9 && intervalo < 20){
+            return 'dezIntervalo'
+        }
+        else if(intervalo > 19){
+            return 'vinteIntervalo'
+        }
+    } 
+
+}
+
+function zeroEsuerda(numero){
+    if(numero < 10){
+        numero = `0${numero}`
+    }
+    return numero
 }
 
 function éPrimo(num){

@@ -6,20 +6,20 @@ link_menu.setAttribute('href', base_url)
 // ***********************************************************************************
 // ******************************* NÚMEROS CARTELA **********************************
 // ***********************************************************************************
-let cartela_estatistica = document.querySelector('.cartela_estatistica') 
+// let cartela_estatistica = document.querySelector('.cartela_estatistica') 
 let cartela_aposta      = document.querySelector('.cartela_aposta')
-let qtdDezena_1             = document.querySelectorAll('.volante_qtdDezenas')
+let qtdDezena_1         = document.querySelectorAll('.volante_qtdDezenas')
 
 qtdDezena_1[0].innerHTML = botoesCartela()
 qtdDezena_1[1].innerHTML = botoesCartela()
 qtdDezena_1[2].innerHTML = botoesCartela()
 
-cartela_estatistica.innerHTML += botoesCartela()
-cartela_estatistica = document.querySelector('.cartela_estatistica')
+// cartela_estatistica.innerHTML += botoesCartela()
+// cartela_estatistica = document.querySelector('.cartela_estatistica')
 
 cartela_aposta.innerHTML = botoesCartela()
 
-mediaQtdSorteado(cartela_estatistica)
+// mediaQtdSorteado(cartela_estatistica)
 
 function botoesCartela(){
     let btn = ''
@@ -29,17 +29,17 @@ function botoesCartela(){
     return btn
 }
 
-function mediaQtdSorteado(item){
-    let btn = item.children
+// function mediaQtdSorteado(item){
+//     let btn = item.children
 
-    for(let i=2; i<btn.length; i++){
-        btn[i].setAttribute('title', i)
-        btn[i].innerHTML += `
-            <div class="media_sorteado" id="${i}">9.67</div>
-            <div class="qtd_sorteado" id="${i}">65</div>
-        `
-    }
-}
+//     for(let i=2; i<btn.length; i++){
+//         btn[i].setAttribute('title', i)
+//         btn[i].innerHTML += `
+//             <div class="media_sorteado" id="${i}">9.67</div>
+//             <div class="qtd_sorteado" id="${i}">65</div>
+//         `
+//     }
+// }
 
 function zeroEsuerda(numero){
     if(numero < 10){

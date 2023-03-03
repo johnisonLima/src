@@ -448,47 +448,47 @@ main .wrap_estatisticas .cartela_estatistica{
     font-family: var(--fonte_padrao);
 }
 
-.wrap_estatisticas .cartela_estatistica button:nth-child(-n+6){
+.wrap_estatisticas .cartela_estatistica button.zeroIntervalo{
     background-color: var(--palheta_cor00);
     /* color: var(--paleta_monocromatica_cor02); */
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+7):nth-child(-n+12){
+.wrap_estatisticas .cartela_estatistica button.umIntervalo{
     background-color: var(--palheta_cor01);
     /* color: var(--paleta_monocromatica_cor02); */
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+13):nth-child(-n+16){
+.wrap_estatisticas .cartela_estatistica button.doisIntervalo{
     background-color: var(--palheta_cor02);
     /* color: var(--paleta_monocromatica_cor02); */
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+17):nth-child(-n+21){
+.wrap_estatisticas .cartela_estatistica button.tresIntervalo{
     background-color: var(--palheta_cor03);
     /* color: var(--paleta_monocromatica_cor02); */
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+22):nth-child(-n+26){
+.wrap_estatisticas .cartela_estatistica button.quatroIntervalo{
     background-color: var(--palheta_cor04);
     /* color: var(--paleta_monocromatica_cor02); */
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+27):nth-child(-n+28){
+.wrap_estatisticas .cartela_estatistica button.cincoIntervalo{
     background-color: var(--palheta_cor05);    
     /* color: var(--paleta_monocromatica_cor02); */
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+29):nth-child(-n+32){
+.wrap_estatisticas .cartela_estatistica button.seisIntervalo{
     background-color: var(--palheta_cor06);
     /* color: var(--paleta_monocromatica_cor02); */
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+33):nth-child(-n+36){
+.wrap_estatisticas .cartela_estatistica button.seteIntervalo{
     background-color: var(--palheta_cor07);
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+37):nth-child(-n+40){
+.wrap_estatisticas .cartela_estatistica button.oitoIntervalo{
     background-color: var(--palheta_cor08);
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+41):nth-child(-n+42){
+.wrap_estatisticas .cartela_estatistica button.noveIntervalo{
     background-color: var(--palheta_cor09);
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+43):nth-child(-n+53){
+.wrap_estatisticas .cartela_estatistica button.dezIntervalo{
     background-color: var(--palheta_cor10e20);
 }
-.wrap_estatisticas .cartela_estatistica button:nth-child(n+54):nth-child(-n+62){
+.wrap_estatisticas .cartela_estatistica button.vinteIntervalo{
     background-color: var(--palheta_cor20Mais);
 }
 
