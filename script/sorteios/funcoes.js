@@ -96,6 +96,7 @@ function rangeConcurso(){
                 rangeSomaSorteados(responsePeriodo)
                 qtdPrimosSorteados(responsePeriodo)  
                 intervaloSorteado(responsePeriodo)     
+                cartelaSorteados(responsePeriodo)
             }
         })
     }
@@ -260,6 +261,8 @@ function cartelaSorteados(objetos){
     })
 
     let cartela = document.querySelector('.cartela_estatistica')
+            
+    cartela.innerHTML = ''
 
     for(let i=0; i<cartelaSorteados.length; i++){
         let dezena          = cartelaSorteados[i][0],
