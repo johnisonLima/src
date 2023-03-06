@@ -3,6 +3,8 @@ let primeiroConcurso,
     ultimoConcursoAtual,
     somaSorteados
 
+let bnt_switch = document.querySelector('input[name="switch"]')
+
 // Buscando o primeiro e o último concurso via ajax
 $.ajax({
     url:"modulos/sorteios/buscaPrimeiroRegistro.php",
@@ -97,6 +99,14 @@ function rangeConcurso(){
                 qtdPrimosSorteados(responsePeriodo)  
                 intervaloSorteado(responsePeriodo)     
                 cartelaSorteados(responsePeriodo)
+
+                if(ultimoConcursoAtual != ultimoConcurso){
+                    // Carregando a cartela do sorteio de acordo com a mudança do switch 
+                    bnt_switch.addEventListener('change', (event) => { 
+                        cartelaSorteados(responsePeriodo)
+                    })
+                    dezenasSorteiosSeguinte() 
+                }
             }
         })
     }
@@ -200,7 +210,7 @@ function intervaloSorteado(objetos){
     intervaloSOrteado.lastElementChild.innerText = intervalo
 }
 
-function cartelaSorteados(objetos){
+function cartelaSorteadosOrdenada(objetos){
     let dezena              = 1,
         cartelaSorteados    = []
 
@@ -272,13 +282,17 @@ function cartelaSorteados(objetos){
 
         cartela.innerHTML += 
             `<button class="${verificaIntervalo(intervaloDezena)}">
-                ${dezena}
+                ${zeroEsuerda(dezena)}
                 <div class="media_sorteado">${mediaInDezena}</div>
                 <div class="qtd_sorteado">${totalDezena}</div>
             </button>`
 
         cartela.lastChild.setAttribute('id', dezena)
-        cartela.lastChild.setAttribute('title', intervaloDezena)
+        cartela.lastChild.setAttribute('title', zeroEsuerda(intervaloDezena))
+
+        if(éPrimo(dezena)){
+            cartela.lastChild.classList.add('primo')
+        }
     }
     
     function verificaIntervalo(intervalo){
@@ -319,7 +333,166 @@ function cartelaSorteados(objetos){
             return 'vinteIntervalo'
         }
     } 
+}
 
+function cartelaSorteados(objetos){
+    let dezena              = 1,
+        cartelaSorteados    = []   
+
+    while(dezena <= 60){
+        let totalDezena             = 0,
+            penultimoConcursoDezena = true,
+            ultimoConcursoDezena    = 0,
+            intervaloConcursos      = 0,
+            mediaIntervaloDezena    = 0,
+            concursoAnterior        = 0
+        
+        for(let i=0; i<=objetos.length-1; i++){
+            let dezenaUm     = objetos[i].primeiraDezena, 
+                dezenaDois   = objetos[i].segundaDezena, 
+                dezenaTrês   = objetos[i].terceiraDezena, 
+                dezenaQuatro = objetos[i].quartaDezena, 
+                dezenaCinco  = objetos[i].quintaDezena, 
+                dezenaSeis   = objetos[i].sextaDezena,
+                concurso     = Number(objetos[i].concurso)
+
+            if(dezenaUm == dezena ||  dezenaDois == dezena || dezenaTrês == dezena || 
+               dezenaQuatro == dezena || dezenaCinco == dezena || dezenaSeis == dezena){
+
+                if(totalDezena == 0){
+                    // Último concurso que a dezena saiu
+                    ultimoConcursoDezena = concurso
+                }
+                else{
+                    // Concursos que a dezena saiu
+                    // Intervalo entra as saídas da dezena
+                    intervaloConcursos += (concursoAnterior - concurso)
+
+                    if(penultimoConcursoDezena){
+                        // Penultima vez que o dezena saiu  
+                        penultimoConcursoDezena = false
+                    }                    
+                }
+
+                concursoAnterior = concurso
+				totalDezena++;
+            }
+        }
+        // Calculando média e colocando apenas duas casas decimais
+        mediaIntervaloDezena = Number((intervaloConcursos/totalDezena).toFixed(2))  
+        
+        // Inserindo os valores DEZENA, ÚLTIMO SORTEIOS QUE A DEZENA SAIU, MÉDIA SAÍDA E TOTAL
+        cartelaSorteados.push([dezena, ultimoConcursoDezena, mediaIntervaloDezena, totalDezena])
+
+        dezena++
+    }    
+
+    // Ordenando em ordem decrescente de acordo com segundo índice
+    if(bnt_switch.checked){
+        cartelaSorteados.sort((a, b) =>{
+            if(a[0] === b[0]){
+                return 0
+            }
+            return (a[0] < b[0]) ? -1 : 1        
+        })
+    }
+    else{
+        cartelaSorteados.sort((a, b) =>{
+            if(a[1] === b[1]){
+                return 0
+            }
+            return (a[1] > b[1]) ? -1 : 1        
+        })
+    }
+
+    let cartela = document.querySelector('.cartela_estatistica')
+            
+    cartela.innerHTML = ''
+
+    for(let i=0; i<cartelaSorteados.length; i++){
+        let dezena          = cartelaSorteados[i][0],
+            intervaloDezena = ultimoConcursoAtual - cartelaSorteados[i][1],
+            mediaInDezena   = cartelaSorteados[i][2],
+            totalDezena     = cartelaSorteados[i][3]
+
+        cartela.innerHTML += 
+            `<button class="${verificaIntervalo(intervaloDezena)}">
+                ${zeroEsuerda(dezena)}
+                <div class="media_sorteado">${mediaInDezena}</div>
+                <div class="qtd_sorteado">${totalDezena}</div>
+            </button>`
+
+        cartela.lastChild.setAttribute('id', dezena)
+        cartela.lastChild.setAttribute('title', zeroEsuerda(intervaloDezena))
+
+        if(éPrimo(dezena)){
+            cartela.lastChild.classList.add('primo')
+        }
+    }
+    
+    function verificaIntervalo(intervalo){
+        if(intervalo == 0){
+            return 'zeroIntervalo'
+        }
+        else if(intervalo == 1){
+            return 'umIntervalo'
+        }
+        else if(intervalo == 2){
+            return 'doisIntervalo'
+        }
+        else if(intervalo == 3){
+            return 'tresIntervalo'
+        }
+        else if(intervalo == 4){
+            return 'quatroIntervalo'
+        }
+        else if(intervalo == 5){
+            return 'cincoIntervalo'
+        }
+        else if(intervalo == 6){
+            return 'seisIntervalo'
+        }
+        else if(intervalo == 7){
+            return 'seteIntervalo'
+        }
+        else if(intervalo == 8){
+            return 'oitoIntervalo'
+        }
+        else if(intervalo == 9){
+            return 'noveIntervalo'
+        }
+        else if(intervalo > 9 && intervalo < 20){
+            return 'dezIntervalo'
+        }
+        else if(intervalo > 19){
+            return 'vinteIntervalo'
+        }
+    } 
+}
+
+function dezenasSorteiosSeguinte(){
+    $.ajax({
+        url:"modulos/sorteios/buscaColuna.php",
+        method:"POST",
+        data:{
+            concurso:'concurso',
+            valor:  ultimoConcursoAtual+1
+        },
+        success: (responseText) =>{            
+            let responseSorteioAnterior = JSON.parse(responseText.trim()),
+                btn_sorteio      	= document.querySelectorAll('.cartela_estatistica button'),
+                concursos           = Object.values(responseSorteioAnterior[0])   
+
+            // Verificando a posição das dezenas sorteadas do concurso seguinte
+            for(let i=0; i<btn_sorteio.length; i++){
+                for(let j=2; j<=7; j++){
+                    if(concursos[j] == btn_sorteio[i].id){
+                        btn_sorteio[i].classList.add('sorteado')
+                    }
+                }
+            }	
+        }
+    })
 }
 
 function zeroEsuerda(numero){

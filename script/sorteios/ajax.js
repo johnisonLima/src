@@ -13,6 +13,11 @@ HttpPost(selecionaTudo, () =>{
         qtdPrimosSorteados(responseTudo)  
         intervaloSorteado(responseTudo)     
         cartelaSorteados(responseTudo)
+
+        // Carregando a cartela do sorteio de acordo com a mudança do switch 
+        bnt_switch.addEventListener('change', (event) => { 
+            cartelaSorteados(responseTudo)
+        })
     });
 
     error(() => {})

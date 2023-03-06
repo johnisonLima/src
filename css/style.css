@@ -275,7 +275,7 @@ main .wrap_estatisticas > .control_sorteado{
     width: 35px;    
     height: 15px;
     position: relative;
-    background-color: var(--paleta_padrao_cor05);
+    /* background-color: var(--paleta_padrao_cor05); */
     border-radius: 30px;
 }
 
@@ -283,7 +283,7 @@ main .wrap_estatisticas > .control_sorteado{
     display: none;
 }
 
-.wrap_estatisticas > .control_sorteado .switch .slider{
+.wrap_estatisticas .control_sorteado .switch .slider{
     position: absolute;
     top: 0;
     right: 0;
@@ -297,7 +297,7 @@ main .wrap_estatisticas > .control_sorteado{
     transition: .4s;
 }
 
-.wrap_estatisticas > .control_sorteado .switch .slider::before{
+.wrap_estatisticas .control_sorteado .switch .slider:before{
     position: absolute;
     content: '';
     width: 100%;
@@ -306,6 +306,12 @@ main .wrap_estatisticas > .control_sorteado{
     border-radius: 30px;
     transform: translateX(-20px);
     transition: .4s;
+}
+
+.wrap_estatisticas .control_sorteado .switch input:checked 
++ .slider:before{
+    transform: translateX(20px);
+    background: var(--paleta_padrao_cor04);
 }
 
 /******************************** PRIMO SORTEADOS ********************************/
@@ -324,8 +330,8 @@ main .wrap_estatisticas > .primo_sorteado{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     color: var(--paleta_monocromatica_cor01);
     text-shadow: 1px 1px 1px #000000a9;
     background-image: url('../img/esfera-1.png');
@@ -339,38 +345,38 @@ main .wrap_estatisticas > .primo_sorteado{
 }
 
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:first-child{
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     font-size: 8px;
 }
 
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(2){
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     font-size: 10px;
 }
 
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(3){
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     font-size: 12px;
 }
 
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(4){
-    width: 21px;
-    height: 21px;
+    width: 26px;
+    height: 26px;
     font-size: 12px;
 }
 
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(5){
-    width: 23px;
-    height: 23px;
+    width: 30px;
+    height: 30px;
     font-size: 14px;
 }
 
 .wrap_estatisticas > .primo_sorteado > .qtd_primo:nth-child(6){
-    width: 26px;
-    height: 26px;
+    width: 35px;
+    height: 35px;
     font-size: 17px;
 }
 
@@ -490,6 +496,15 @@ main .wrap_estatisticas .cartela_estatistica{
 }
 .wrap_estatisticas .cartela_estatistica button.vinteIntervalo{
     background-color: var(--palheta_cor20Mais);
+}
+
+.wrap_estatisticas .cartela_estatistica > button.primo{
+    border: 2px solid var(--palheta_cor00_darken);
+}
+
+.wrap_estatisticas .cartela_estatistica > button.sorteado{
+    background-color: var(--paleta_padrao_cor01);
+    color: var(--paleta_padrao_cor05);
 }
 
 /****************************** CONTROL APOSTADOS    ******************************/
