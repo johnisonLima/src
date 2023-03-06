@@ -774,7 +774,7 @@ main > .wrap_volante{
     cursor: pointer;
 }
 
-.wrap_volante .volante_body .cartela_aposta button.seleted{
+.wrap_volante .volante_body .cartela_aposta button.selected{
     background-image: none;    
     background-color: var(--paleta_padrao_cor01);
     color: var(--paleta_padrao_cor04);

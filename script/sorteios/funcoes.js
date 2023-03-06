@@ -1,9 +1,9 @@
+let bnt_switch          = document.querySelector('input[name="switch"]')
+
 let primeiroConcurso,
     ultimoConcurso,
     ultimoConcursoAtual,
     somaSorteados
-
-let bnt_switch = document.querySelector('input[name="switch"]')
 
 // Buscando o primeiro e o último concurso via ajax
 $.ajax({
