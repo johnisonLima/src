@@ -1,4 +1,5 @@
 let bnt_switch          = document.querySelector('input[name="switch"]')
+let cartela_aposta      = document.querySelector('.cartela_aposta')
 
 let primeiroConcurso,
     ultimoConcurso,
@@ -210,131 +211,6 @@ function intervaloSorteado(objetos){
     intervaloSOrteado.lastElementChild.innerText = intervalo
 }
 
-function cartelaSorteadosOrdenada(objetos){
-    let dezena              = 1,
-        cartelaSorteados    = []
-
-    while(dezena <= 60){
-        let totalDezena             = 0,
-            penultimoConcursoDezena = true,
-            ultimoConcursoDezena    = 0,
-            intervaloConcursos      = 0,
-            mediaIntervaloDezena    = 0,
-            concursoAnterior        = 0
-        
-        for(let i=0; i<=objetos.length-1; i++){
-            let dezenaUm     = objetos[i].primeiraDezena, 
-                dezenaDois   = objetos[i].segundaDezena, 
-                dezenaTrês   = objetos[i].terceiraDezena, 
-                dezenaQuatro = objetos[i].quartaDezena, 
-                dezenaCinco  = objetos[i].quintaDezena, 
-                dezenaSeis   = objetos[i].sextaDezena,
-                concurso     = Number(objetos[i].concurso)
-
-            if(dezenaUm == dezena ||  dezenaDois == dezena || dezenaTrês == dezena || 
-               dezenaQuatro == dezena || dezenaCinco == dezena || dezenaSeis == dezena){
-
-                if(totalDezena == 0){
-                    // Último concurso que a dezena saiu
-                    ultimoConcursoDezena = concurso
-                }
-                else{
-                    // Concursos que a dezena saiu
-                    // Intervalo entra as saídas da dezena
-                    intervaloConcursos += (concursoAnterior - concurso)
-
-                    if(penultimoConcursoDezena){
-                        // Penultima vez que o dezena saiu  
-                        penultimoConcursoDezena = false
-                    }                    
-                }
-
-                concursoAnterior = concurso
-				totalDezena++;
-            }
-        }
-        // Calculando média e colocando apenas duas casas decimais
-        mediaIntervaloDezena = Number((intervaloConcursos/totalDezena).toFixed(2))  
-        
-        // Inserindo os valores DEZENA, ÚLTIMO SORTEIOS QUE A DEZENA SAIU, MÉDIA SAÍDA E TOTAL
-        cartelaSorteados.push([dezena, ultimoConcursoDezena, mediaIntervaloDezena, totalDezena])
-
-        dezena++
-    }    
-
-    // Ordenando em ordem decrescente de acordo com segundo índice
-    cartelaSorteados.sort((a, b) =>{
-        if(a[1] === b[1]){
-            return 0
-        }
-        return (a[1] > b[1]) ? -1 : 1        
-    })
-
-    let cartela = document.querySelector('.cartela_estatistica')
-            
-    cartela.innerHTML = ''
-
-    for(let i=0; i<cartelaSorteados.length; i++){
-        let dezena          = cartelaSorteados[i][0],
-            intervaloDezena = ultimoConcursoAtual - cartelaSorteados[i][1],
-            mediaInDezena   = cartelaSorteados[i][2],
-            totalDezena     = cartelaSorteados[i][3]
-
-        cartela.innerHTML += 
-            `<button class="${verificaIntervalo(intervaloDezena)}">
-                ${zeroEsuerda(dezena)}
-                <div class="media_sorteado">${mediaInDezena}</div>
-                <div class="qtd_sorteado">${totalDezena}</div>
-            </button>`
-
-        cartela.lastChild.setAttribute('id', dezena)
-        cartela.lastChild.setAttribute('title', zeroEsuerda(intervaloDezena))
-
-        if(éPrimo(dezena)){
-            cartela.lastChild.classList.add('primo')
-        }
-    }
-    
-    function verificaIntervalo(intervalo){
-        if(intervalo == 0){
-            return 'zeroIntervalo'
-        }
-        else if(intervalo == 1){
-            return 'umIntervalo'
-        }
-        else if(intervalo == 2){
-            return 'doisIntervalo'
-        }
-        else if(intervalo == 3){
-            return 'tresIntervalo'
-        }
-        else if(intervalo == 4){
-            return 'quatroIntervalo'
-        }
-        else if(intervalo == 5){
-            return 'cincoIntervalo'
-        }
-        else if(intervalo == 6){
-            return 'seisIntervalo'
-        }
-        else if(intervalo == 7){
-            return 'seteIntervalo'
-        }
-        else if(intervalo == 8){
-            return 'oitoIntervalo'
-        }
-        else if(intervalo == 9){
-            return 'noveIntervalo'
-        }
-        else if(intervalo > 9 && intervalo < 20){
-            return 'dezIntervalo'
-        }
-        else if(intervalo > 19){
-            return 'vinteIntervalo'
-        }
-    } 
-}
-
 function cartelaSorteados(objetos){
     let dezena              = 1,
         cartelaSorteados    = []   
@@ -495,6 +371,51 @@ function dezenasSorteiosSeguinte(){
     })
 }
 
+function cartelaAposta(){
+    cartela_aposta.innerHTML = botoesCartela()
+    
+    function botoesCartela(){
+        let btn = ''
+        for(let i=1; i<=60; i++){
+            btn += `<button id="${i}">${zeroEsuerda(i)}</button>`
+        }
+        return btn
+    }
+}
+
+function rangeSomaAposta(){
+    $('#range_soma_apostados').each(function(){		
+        var handle = $("#handle_aposta"),
+            minValue 	= 27,
+            maxValue 	= 345;
+    
+        $(this).slider({
+            range: false,
+            animate: "fast",
+            min:minValue,
+            max:maxValue,
+            create: function(event, ui){
+                handle.text(0);	
+              },
+              change: function(event, ui){
+                handle.text(ui.value);
+              }
+        })
+    })
+}
+
+function intervaloAposta(array){
+    if(array.length > 1){
+        let menor = array.reduce( (a, b) => Math.min(a, b))
+    
+        let maior = array.reduce( (a, b) => Math.max(a, b))
+    
+        return maior - menor+1
+    }
+
+    return 0
+}
+
 function zeroEsuerda(numero){
     if(numero < 10){
         numero = `0${numero}`
@@ -503,6 +424,9 @@ function zeroEsuerda(numero){
 }
 
 function éPrimo(num){
+    if(num == 1){
+        return false
+    }
     for(let i=2; i<num; i++){
         if(num % i == 0){
             return false

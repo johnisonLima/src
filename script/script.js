@@ -7,7 +7,7 @@ link_menu.setAttribute('href', base_url)
 // ******************************* NÚMEROS CARTELA **********************************
 // ***********************************************************************************
 // let cartela_estatistica = document.querySelector('.cartela_estatistica') 
-let cartela_aposta      = document.querySelector('.cartela_aposta')
+// let cartela_aposta      = document.querySelector('.cartela_aposta')
 let qtdDezena_1         = document.querySelectorAll('.volante_qtdDezenas')
 
 qtdDezena_1[0].innerHTML = botoesCartela()
@@ -17,7 +17,7 @@ qtdDezena_1[2].innerHTML = botoesCartela()
 // cartela_estatistica.innerHTML += botoesCartela()
 // cartela_estatistica = document.querySelector('.cartela_estatistica')
 
-cartela_aposta.innerHTML = botoesCartela()
+// cartela_aposta.innerHTML = botoesCartela()
 
 // mediaQtdSorteado(cartela_estatistica)
 
@@ -75,20 +75,20 @@ function zeroEsuerda(numero){
 // ***********************************************************************************
 // ************************ TESTE RANGE SOMA APOSTAS *********************************
 // ***********************************************************************************
-$('#range_soma_apostados').each(function(){		
-    var handle = $("#handle_aposta"),
-        minValue 	= 27,
-        maxValue 	= 345;
+// $('#range_soma_apostados').each(function(){		
+//     var handle = $("#handle_aposta"),
+//         minValue 	= 27,
+//         maxValue 	= 345;
 
-    $(this).slider({
-        animate: "fast",
-        min:minValue,
-        max:maxValue,
-        create: function(event, ui){
-            handle.text(0);	
-          },
-          change: function(event, ui){
-            handle.text(ui.value);
-          }
-    });
-});	
+//     $(this).slider({
+//         animate: "fast",
+//         min:minValue,
+//         max:maxValue,
+//         create: function(event, ui){
+//             handle.text(0);	
+//           },
+//           change: function(event, ui){
+//             handle.text(ui.value);
+//           }
+//     });
+// });	
