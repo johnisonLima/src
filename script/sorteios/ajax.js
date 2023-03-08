@@ -6,6 +6,7 @@ let btn_cartelaAposta   = document.querySelector('.cartela_aposta').children,
     qtd_selecionados    = document.querySelector('.value_selected'),
     qtd_primoAposta     = document.querySelectorAll('.qtd_primo'),
     div_intervaloAposta = document.querySelector('.intervalo_apostado .progress_bar'),
+    btn_submit           = document.querySelector('.btn_submit'),
     btn_reset           = document.querySelector('.btn_reset'),
     contSelecionadas    = 0,
     contPrimosAposta    = 0,
@@ -26,6 +27,8 @@ HttpPost(selecionaTudo, () =>{
         cartelaSorteados(responseTudo)
         cartelaAposta()
         rangeSomaAposta()
+
+        qtd_numAposta()
 
         // Carregando a cartela do sorteio de acordo com a mudança do switch 
         bnt_switch.addEventListener('change', (event) => { 
@@ -69,7 +72,7 @@ HttpPost(selecionaTudo, () =>{
                 }// fim contains selected
 
                 // Ordenando o array
-                arrSelecionadas.sort()
+                arrSelecionadas.sort((a, b)=>(a < b) ? -1 : 1)
 
                 // Modificando o valor dos números selecionados
                 qtd_selecionados.innerText = contSelecionadas
@@ -90,11 +93,18 @@ HttpPost(selecionaTudo, () =>{
                 // Calculando a distância entre o primeiro e o último número
                 div_intervaloAposta.innerText = intervaloAposta(arrSelecionadas)
                 div_intervaloAposta.style.width = `${intervaloAposta(arrSelecionadas)}%`
+
+                console.log(arrSelecionadas)
             })
         }
 
+        btn_submit.addEventListener('click', (event) => {
+            event.preventDefault()
+
+
+        })
+
         btn_reset.addEventListener('click', (event) => {
-            console.log("gdgbx")
             contSelecionadas    = 0
             somaSorteados       = 0
             contPrimosAposta    = 0

@@ -46,6 +46,9 @@
                     <li>Aposta
                         <ul class="drop-down">
                             <li>Inserir</li>
+                            <li class="qtd_numAposta" onclick="qtd_numAposta()">
+                                Quantidade números
+                            </li>
                         </ul>
                     <li>Estatísticas
                         <ul class="drop-down">
@@ -642,6 +645,19 @@
             </div>
         </main>
         <footer class="footer">Footer</footer>
+
+        <!-- Popup com alertas -->
+        <div class="model">
+            <div class="model_inner">
+                <div class="model_close">
+                    <span class="material-symbols-outlined">close</span>
+                </div>
+                <div class="model_wrap">
+                    <div class="model_content"></div>
+                </div>
+            </div>
+            <div class="bg_overlay"></div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.3.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" crossorigin="anonymous"></script>

@@ -975,7 +975,7 @@ main .wrap_aposta > .card_aposta{
 }
 
 /*****************************************************************************
-********************************* FOOTER *************************************
+************************************ FOOTER ***********************************
 ******************************************************************************/
 .footer{
     grid-area: footer;
@@ -984,7 +984,111 @@ main .wrap_aposta > .card_aposta{
     background-color: wheat;
 }
 
+/*****************************************************************************
+*********************************** WRAP POUP ********************************
+******************************************************************************/
+.container > .model{
+    text-align: center;
+    position: fixed;
+    top: 10px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    outline: none;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: -1;
+    transition: opacity .20s linear, z-index .15s;
+}
 
+.model > .model_inner{
+    transform: translate(0, -25%);
+    transition: .5s ease-out;
+    display: inline-block;
+    width: 600px;
+    margin: 30px auto;
+    max-width: 97%;
+}
+
+.model .model_inner > .model_close{
+    font-size: 30px;
+    color: #000;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.model .model_inner > .model_wrap{
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: var(--paleta_monocromatica_cor01);
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 3px 9px #00000075;
+    padding: 25px 20px;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+}
+
+.model > .bg_overlay{
+    background-color: #00000077;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    transition: background-color .15s linear;
+}
+
+.container > .model_open{
+    opacity: 1;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.container .model_open .model_inner{
+    transform: translate(0, 0);
+    position: relative;
+    z-index: 3;
+}
+
+.model > .bg_overlay{
+    background-color: #00000077;
+    z-index: 0;
+}
+
+/*****************************************************************************
+************************** QUNATIDADE DEZENAS NA APOSTA **********************
+******************************************************************************/
+.model .model_inner .model_wrap .model_content .qtd_numAposta{
+    display: flex;
+    flex-direction: column;
+}
+
+.qtd_numAposta .itens_radio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-block: 8px;
+}
+
+.qtd_numAposta .btn_qtd_dezenas{
+    align-self: center;
+    width: 70%;
+    color: var(--paleta_padrao_cor01);
+    background-color: var(--paleta_padrao_cor05);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 0;
+    border-radius: 6px;
+    outline: none;
+}
 
 .phone_hidden,
 .tablet_hidden{

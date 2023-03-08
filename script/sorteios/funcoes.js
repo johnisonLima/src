@@ -1,5 +1,7 @@
 let bnt_switch          = document.querySelector('input[name="switch"]')
 let cartela_aposta      = document.querySelector('.cartela_aposta')
+let btn_qtdNumAposta    = document.querySelector('.qtd_numAposta')
+let div_modal           = document.querySelector('.model_content')
 
 let primeiroConcurso,
     ultimoConcurso,
@@ -414,6 +416,60 @@ function intervaloAposta(array){
     }
 
     return 0
+}
+
+function qtd_numAposta(){
+   let form = 
+        `<form method="post" action="javascript:void(0)" id="form_qtdApostas">
+            <fieldset class="qtd_numAposta">
+                <legend>Quantidade de números da aposta:</legend>
+                <div class="itens_radio">			                        
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio6" value="6">
+                        <label class="" for="inlineRadio6">6</label>
+                    </div>     
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio7" value="7">
+                        <label class="" for="inlineRadio7">7</label>
+                    </div>
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio8" value="8">
+                        <label class="" for="inlineRadio8">8</label>
+                    </div>
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio9" value="9">
+                        <label class="" for="inlineRadio9">9</label>
+                    </div>
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio10" value="10">
+                        <label class="" for="inlineRadio10">10</label>
+                    </div>
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio11" value="11">
+                        <label class="" for="inlineRadio11">11</label>
+                    </div>
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio12" value="12">
+                        <label class="" for="inlineRadio12">12</label>
+                    </div>  
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio13" value="13">
+                        <label class="" for="inlineRadio13">13</label>
+                    </div>
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio14" value="14">
+                        <label class="" for="inlineRadio14">14</label>
+                    </div>
+                    <div class="">
+                        <input class="" type="radio" name="radioQtdDezenas" id="inlineRadio15" value="15">
+                        <label class="" for="inlineRadio15">15</label>
+                    </div>  
+                </div>
+                <button class="btn_qtd_dezenas" type="submit">Enviar</button>            
+            </fieldset> 
+        </form>`
+    
+    div_modal.innerHTML = form
 }
 
 function zeroEsuerda(numero){
