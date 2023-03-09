@@ -28,8 +28,6 @@ HttpPost(selecionaTudo, () =>{
         cartelaAposta()
         rangeSomaAposta()
 
-        qtd_numAposta()
-
         // Carregando a cartela do sorteio de acordo com a mudança do switch 
         bnt_switch.addEventListener('change', (event) => { 
             cartelaSorteados(responseTudo)
@@ -93,15 +91,28 @@ HttpPost(selecionaTudo, () =>{
                 // Calculando a distância entre o primeiro e o último número
                 div_intervaloAposta.innerText = intervaloAposta(arrSelecionadas)
                 div_intervaloAposta.style.width = `${intervaloAposta(arrSelecionadas)}%`
-
-                console.log(arrSelecionadas)
             })
         }
 
         btn_submit.addEventListener('click', (event) => {
             event.preventDefault()
+            
+            if(contSelecionadas === qtdDezenasAposta){
+                let concursoAposta = ultimoConcurso+1
 
-
+                console.log(concursoAposta)
+            }
+            else{
+                let msg = ''
+                if(contSelecionadas < qtdDezenasAposta){
+                    msg = `Quantidade de dezenas insuficientes!<br> <strong>${contSelecionadas}</strong> dezenas selecionadas.`
+                }
+                else{
+                    msg = `Quantidade de dezenas excedentes!<br> <strong>${contSelecionadas}</strong> dezenas selecionadas.`
+                }
+                mensagem('msgErro', msg)
+                console.log('Não pode')
+            }
         })
 
         btn_reset.addEventListener('click', (event) => {

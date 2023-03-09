@@ -1063,8 +1063,39 @@ main .wrap_aposta > .card_aposta{
     z-index: 0;
 }
 
+.model .model_inner.msg  > .model_wrap{
+    color: #004085;
+    background-color: #CCE5FF;
+}
+.model .model_inner.msg > .model_close{
+    color: #004085;
+}
+
+.model .model_inner.msgAlerta  > .model_wrap{
+    color: #cab475;
+    background-color: #fff3cd;
+}
+.model .model_inner.msgAlerta > .model_close{
+    color: #cab475;
+}
+
+.model .model_inner.msgSucesso  > .model_wrap{
+    color: #1e9e3c;
+    background-color: #d4edda;
+}
+.model .model_inner.msgSucesso > .model_close{
+    color: #1e9e3c;
+}
+
+.model .model_inner.msgErro  > .model_wrap{
+    color: #943728;
+    background-color: #f8d7da;
+}
+.model .model_inner.msgErro > .model_close{
+    color: #596c26;
+}
 /*****************************************************************************
-************************** QUNATIDADE DEZENAS NA APOSTA **********************
+************************** QUANTIDADE DEZENAS NA APOSTA **********************
 ******************************************************************************/
 .model .model_inner .model_wrap .model_content .qtd_numAposta{
     display: flex;
@@ -1088,7 +1119,16 @@ main .wrap_aposta > .card_aposta{
     border: 0;
     border-radius: 6px;
     outline: none;
+    cursor: pointer;
+    transition: .4s ease-in;
 }
+
+.qtd_numAposta .btn_qtd_dezenas:hover{
+    background-color: var(--paleta_padrao_cor01);
+    color: var(--paleta_padrao_cor05);
+}
+
+
 
 .phone_hidden,
 .tablet_hidden{
