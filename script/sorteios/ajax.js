@@ -6,12 +6,12 @@ let btn_cartelaAposta   = document.querySelector('.cartela_aposta').children,
     qtd_selecionados    = document.querySelector('.value_selected'),
     qtd_primoAposta     = document.querySelectorAll('.qtd_primo'),
     div_intervaloAposta = document.querySelector('.intervalo_apostado .progress_bar'),
-    btn_submit           = document.querySelector('.btn_submit'),
+    btn_submit          = document.querySelector('.btn_submit'),
     btn_reset           = document.querySelector('.btn_reset'),
     contSelecionadas    = 0,
     contPrimosAposta    = 0,
     somaSelecionadas    = 0,
-    arrSelecionadas = []
+    arrSelecionadas     = []
 
 HttpPost(selecionaTudo, () =>{
     beforeSend(() => {})
@@ -100,7 +100,7 @@ HttpPost(selecionaTudo, () =>{
             if(contSelecionadas === qtdDezenasAposta){
                 let concursoAposta = ultimoConcurso+1
 
-                console.log(concursoAposta)
+                console.log(concursoAposta)        
             }
             else{
                 let msg = ''
