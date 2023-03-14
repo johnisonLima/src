@@ -103,7 +103,7 @@ HttpPost(selecionaTudo, () =>{
                 dezenasdiferentes = true
 
                 if(dezenasdiferentes){
-                    HttpPost(criarAposta, () =>{
+                    HttpPost(inserirAposta, () =>{
                         beforeSend(() => {})
 
                         success(() => {

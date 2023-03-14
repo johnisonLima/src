@@ -40,6 +40,45 @@
             );
         }// conecta
 
+        public function inserir($objeto){
+            $sql = "INSERT INTO $objeto->tabela (";
+
+            for($i=0; $i<count($objeto->campos_valores); $i++){ 
+                $sql.=key($objeto->campos_valores);
+                if($i < count($objeto->campos_valores)-1){
+                    $sql.= " ,";
+                }
+                else{
+                    $sql.= ") ";
+                }
+                next($objeto->campos_valores);
+            }
+
+            reset($objeto->campos_valores);
+            $sql.= "VALUES (";
+            for($i=0; $i<count($objeto->campos_valores); $i++){
+                if(is_null($objeto->campos_valores[key($objeto->campos_valores)])){
+                    $sql.= 'NULL';
+                }
+                else if(is_numeric($objeto->campos_valores[key($objeto->campos_valores)])){
+                    $sql.=$objeto->campos_valores[key($objeto->campos_valores)];
+                }
+                else{
+                    $sql.="'".$objeto->campos_valores[key($objeto->campos_valores)]."'";
+                }
+
+                if($i < count($objeto->campos_valores)-1){
+                    $sql.= ", ";
+                }
+                else{
+                    $sql.= "); ";
+                }
+                next($objeto->campos_valores);
+            }
+            // echo($sql);
+            return $this->executaSql($sql);
+        }
+
         public function selecionaTudo($objeto){
             if(!$this->verificaVazia($objeto)){
                 $sql = "SELECT * FROM $objeto->tabela";
@@ -138,6 +177,10 @@
             $this->executaSql($sql);
             return ($this->linhasAfetadas === 0);
         }// verificaVazia
+
+        public function SqlLinhasAfetadas(){
+            return mysqli_affected_rows($this->conexao);
+        }
 
         public function trataErro($arquivo=NULL, $rotina=NULL, $numerro=NULL, $msgerro=NULL, $geraexcept=FALSE){
             if($arquivo == NULL)
