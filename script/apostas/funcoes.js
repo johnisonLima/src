@@ -75,7 +75,7 @@ function mudarQtdDezenas(){
 
     let form = new FormData(form_qtdDezenas)
 
-    xmlHttpPost(atualizar, () =>{
+    HttpPost(atualizar, () =>{
         beforeSend(() => {})
 
         success(() => {

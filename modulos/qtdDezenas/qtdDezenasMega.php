@@ -7,6 +7,16 @@
 
             return retornaTodosRegistros($qtd);
         }// selecionaTudo        
+
+        public function atualizar($qtdDezenas){
+            $qtd = new qtdDezenas();
+
+            $qtd->valorpk = 1;
+            $qtd->setValor('qtdNum', $qtdDezenas);
+            $qtd->atualizar($qtd);
+            
+            return true;
+        }// atualizar
     }
     
     function retornaTodosRegistros($objeto){

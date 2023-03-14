@@ -68,6 +68,32 @@
             }
         }// selecionaColuna
 
+        public function atualizar($objeto){
+            if(!$this->verificaVazia($objeto)){
+                $sql = "UPDATE $objeto->tabela SET ";
+                for($i=0; $i<count($objeto->campos_valores); $i++){
+                    $sql.= key($objeto->campos_valores)." = ";
+                    $sql.=is_numeric($objeto->campos_valores[key($objeto->campos_valores)]) ?
+                    $objeto->campos_valores[key($objeto->campos_valores)] : "'".$objeto->campos_valores[key($objeto->campos_valores)]."'";
+                    if($i< (count($objeto->campos_valores)-1)){
+                        $sql.=", ";
+                    }
+                    else{
+                        $sql.=" ";
+                    }
+                    next($objeto->campos_valores);
+                }
+                $sql.= " WHERE $objeto->campopk = ";
+                $sql.= is_numeric($objeto->valorpk) ? $objeto->valorpk : "'".$objeto->valorpk."'";
+
+                //echo($sql);
+                return $this->executaSql($sql);
+            }
+            else{
+                echo "Tabela vázia";
+            }
+        }
+
         public function executaSql($sql = NULL){
             if($sql != NULL){
                 $query = mysqli_query($this->conexao, $sql) or ($this->trataErro(__FILE__, __FUNCTION__));
