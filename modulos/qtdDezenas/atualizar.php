@@ -8,7 +8,7 @@
     $cadastrado = $qtd->atualizar($qtdDezenas);
 
     if($cadastrado){
-        echo "cadastrado";
+        echo "atualizado";
     }
     else{
         echo "erro";

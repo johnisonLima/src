@@ -1,6 +1,5 @@
 let bnt_switch          = document.querySelector('input[name="switch"]'),
     cartela_aposta      = document.querySelector('.cartela_aposta'),
-    btn_qtdNumAposta    = document.querySelector('.qtd_numAposta'),
     div_model           = document.querySelector('.model'),
     div_modelContent    = document.querySelector('.model_content')
 
@@ -420,9 +419,12 @@ function intervaloAposta(array){
 }
 
 function mensagem(tipo, msg){
-    $(".model").addClass('model_open');
-    $(".model_inner").addClass(tipo);
-    $(".model_content").html(msg);
+    $(".model").addClass('model_open')
+    $(".model_inner").removeClass('msgAlerta')
+    $(".model_inner").removeClass('msgSucesso')
+    $(".model_inner").removeClass('msgErro')
+    $(".model_inner").addClass(tipo)
+    $(".model_content").html(msg)
 }
 
 function zeroEsuerda(numero){

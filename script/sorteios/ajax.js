@@ -97,10 +97,24 @@ HttpPost(selecionaTudo, () =>{
         btn_submit.addEventListener('click', (event) => {
             event.preventDefault()
             
+            // Se a qunantidade de dezenas selecionadas for igual a quantidade permitida
             if(contSelecionadas === qtdDezenasAposta){
-                let concursoAposta = ultimoConcurso+1
+                let concursoAposta = ultimoConcurso+1,
+                dezenasdiferentes = true
 
-                console.log(concursoAposta)        
+                if(dezenasdiferentes){
+                    HttpPost(criarAposta, () =>{
+                        beforeSend(() => {})
+
+                        success(() => {
+                            let responseCriarAposta = xhttp.responseText.trim()
+
+                            console.log(responseCriarAposta)
+                        })
+                        
+                        error(() => {})
+                    })
+                }
             }
             else{
                 let msg = ''
@@ -111,7 +125,6 @@ HttpPost(selecionaTudo, () =>{
                     msg = `Quantidade de dezenas excedentes!<br> <strong>${contSelecionadas}</strong> dezenas selecionadas.`
                 }
                 mensagem('msgErro', msg)
-                console.log('Não pode')
             }
         })
 
