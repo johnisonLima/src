@@ -1,5 +1,5 @@
 let atualizar   = 'modulos/qtdDezenas/atualizar',
-    criarAposta = 'modulos/apostas/inserir'
+    inserirAposta = 'modulos/apostas/inserir'
 
 let btn_qtdNumAposta = document.querySelector('.qtd_numAposta')
 

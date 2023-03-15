@@ -103,17 +103,29 @@ HttpPost(selecionaTudo, () =>{
                 dezenasdiferentes = true
 
                 if(dezenasdiferentes){
-                    HttpPost(inserirAposta, () =>{
+                    HttpGet(inserirAposta, () =>{
                         beforeSend(() => {})
 
                         success(() => {
                             let responseCriarAposta = xhttp.responseText.trim()
+                            
+                            let tipo = '',
+                            msg = ''
 
-                            console.log(responseCriarAposta)
+                            if(responseCriarAposta == 'inserido'){
+                                tipo    = 'msgSucesso'
+                                msg     = 'Aposta efetuada com sucesso!!'
+                            }
+                            else{
+                                tipo    = 'msgErro'
+                                msg     = 'Erro ao efetuar a aposta!!'
+                            }
+                            
+                            mensagem(tipo, msg)
                         })
                         
                         error(() => {})
-                    })
+                    },`?dezenas=${arrSelecionadas}&concurso=${concursoAposta}`)
                 }
             }
             else{

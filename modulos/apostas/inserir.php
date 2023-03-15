@@ -3,14 +3,13 @@
 
     $ap = new apostasMega;
 
-    $dezenas    = [6, 12, 32, 44, 51, 57];
-
-    // $dezenas = explode(',', $_POST['dezenas']);
+    $concurso = $_GET['concurso'];
+    $dezenas = explode(',', $_GET['dezenas']);
     $qtdDezenas = count($dezenas);
 
     $meuArray = [
         "quantidadeDezenas"     => $qtdDezenas,
-        "concurso"              => 2563,
+        "concurso"              => $concurso,
         "primeiraDezena"        => $dezenas[0],
         "segundaDezena"         => $dezenas[1],
         "terceiraDezena"        => $dezenas[2],
